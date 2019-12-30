@@ -1,11 +1,12 @@
 const nodemailer = require('nodemailer');
+const keys = require('./config/keys');
 
 const transport = nodemailer.createTransport({
     host: 'smtp.sendgrid.net',
     port: 25,
     auth: {
         user: 'apikey',
-        pass: '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'
+        pass: keys.sendGridKey
     }
 });
 
