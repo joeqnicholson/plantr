@@ -14,7 +14,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   res.json({ msg: 'Success' });
 })
 
-router.post('register', (req, res) => {
+router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
   if (!isValid) {

@@ -1,5 +1,5 @@
 const express = require("express");
-// const router = express.Router();
+const router = express.Router();
 const app = express();
 const db = require("./config/keys").mongoURI;
 const mongoose = require('mongoose');
