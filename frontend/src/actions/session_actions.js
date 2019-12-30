@@ -40,9 +40,10 @@ export const receiveErrors = errors => ({
 export const signup = user => dispatch => (
   APIUtil.signup(user).then(() => (
     dispatch(receiveUserSignIn())
-  ), err => (
-    dispatch(receiveErrors(err.response.data))
-  ))
+  ), err => {
+      debugger
+      return dispatch(receiveErrors(err.response.data))
+  })
 );
 
 export const login = user => dispatch => (
