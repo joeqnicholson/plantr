@@ -3,15 +3,11 @@ const express = require("express");
 const app = express();
 const db = require("./config/keys").mongoURI;
 const mongoose = require('mongoose');
-<<<<<<< HEAD
-const db = require("./config/keys").mongoURI;
-=======
 const bodyParser = require("body-parser");
 const passport = require("passport");
 
 // Import routes
 const users = require("./routes/api/users");
->>>>>>> master
 const plants = require("./routes/api/plants");
 
 mongoose
