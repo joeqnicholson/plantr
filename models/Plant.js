@@ -6,28 +6,28 @@ const PlantSchema = new Schema({
         type: String,
         required: true
     },
-    latin_name: {
+    latinName: {
         type: String,
         required: true
     },
     frequency: {
-        type: Integer,
+        type: Number,
         required: true
     },
     water: {
-        type: Text,
+        type: String,
         required: true
     },
     soil: {
-        type: Text,
+        type: String,
         required: true
     },
     light: {
-        type: Text,
+        type: String,
         required: true
     },
     misc: {
-        type: Text
+        type: String
     },
     date: {
         type: Date,
