@@ -37,15 +37,8 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const signup = user => dispatch => (
-  APIUtil.signup(user).then(() => (
-    dispatch(receiveUserSignIn())
-  ), err => {
-      return dispatch(receiveErrors(err.response.data))
-  })
-);
-
-export const login = user => dispatch => (
+export const login = user => dispatch => {
+  console.log(user);
   APIUtil.login(user).then(res => {
     const { token } = res.data;
     localStorage.setItem('jwtToken', token);
@@ -56,4 +49,18 @@ export const login = user => dispatch => (
     .catch(err => {
       dispatch(receiveErrors(err.response.data));
     })
-)
+  };
+
+export const signup = user => dispatch => {
+  APIUtil.signup(user).then(res => {
+    //is this necessary? check in on this later on...
+    dispatch(receiveUserSignIn());
+
+    let userToLogin = Object.assign(user);
+    delete userToLogin.username;
+    delete userToLogin.password2;
+    dispatch(login(userToLogin));
+  }, err => {
+    return dispatch(receiveErrors(err.response.data))
+  })
+};
