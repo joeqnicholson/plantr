@@ -13,6 +13,10 @@ const OwnedPlantSchema = new Schema({
   nickname: {
     type: String,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 
