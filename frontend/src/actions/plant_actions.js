@@ -26,4 +26,3 @@ export const fetchPlant = (plantId) => dispatch => {
   return PlantApiUtils.fetchPlant(plantId)
     .then(plant => dispatch(receivePlant(plant)))
 };
-
