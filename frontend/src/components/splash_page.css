@@ -19,6 +19,9 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+.plantr{
+    height: 100%;
+}
 body,html{
     height: 100%;
 }
@@ -43,15 +46,15 @@ body,html{
     align-items: center;
 }
 
-.login-button, .signup-button{
-        background-color: transparent;
-        border: none;
-        color: #009245;
+.signup{
+        color: #2b4624;
         padding: 10px 10px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 24.5px;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
 }
 .main-content{
     display: flex;
