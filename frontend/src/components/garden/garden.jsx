@@ -1,6 +1,7 @@
 import React from 'react';
 import '../garden.css';
-import GardenIndexItem from './garden_index_item_container';
+import GardenIndexItem from './garden_index_item';
+import AddOwnedPlantModalContainer from '../modals/add_owned_plant_modal_container';
 
 class Garden extends React.Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class Garden extends React.Component {
 
     componentDidMount() {
         this.props.ownedPlants.forEach((ownedPlant) => {
-            ownedPlant[plant] = this.props.plants[ownedPlant.plantId];
+            ownedPlant.plant = this.props.plants[ownedPlant.plantId];
         });
     }
 
@@ -25,6 +26,7 @@ class Garden extends React.Component {
 
             return (
                 <div className="garden-wrapper">
+                    {this.props.modal && <AddOwnedPlantModalContainer/>}
                     <div className="garden-body">
                         <div className="garden-items-wrapper">
                             {gardenIndexItems}
