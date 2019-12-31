@@ -11,14 +11,11 @@ const validateOwnedPlantInput = require('../../validation/ownedPlants');
 // })
 
 router.get("/:userId", (req, res) => {
-  debugger
-  OwnedPlant.find()
+  OwnedPlant.find({userId: req.params.userId})
     .then(ownedPlants => {
-      debugger
       res.json(ownedPlants);
     })
     .catch(err => {
-      debugger
       res
         .status(404)
         .json({ errMsg: "There was an issue retreiving your plants" })
