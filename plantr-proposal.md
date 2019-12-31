@@ -13,6 +13,8 @@ In order for plantr to operate as a minimum viable product it will have the foll
 
 * Allow users to have a 'garden' which is represented as grid on the homepage. Each plant in the garden will send a notification when the plant is ready to be watered, with the ammount of water needed to the user via e-mail (or text).
 
+* Browse all plants in the plant database.
+
 # Workload delegation
 
 * Day 1
