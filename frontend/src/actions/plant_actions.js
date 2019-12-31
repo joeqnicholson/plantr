@@ -1,4 +1,4 @@
-import * PlantApiUtils from '../util/plant_api_util';
+import * as PlantApiUtils from '../util/plant_api_util';
 
 export const RECEIVE_ALL_PLANTS = 'RECEIVE_ALL_PLANTS';
 export const RECEIVE_PLANT = 'RECEIVE_PLANT';
@@ -18,8 +18,11 @@ const receivePlant = plant => {
 };
 
 export const fetchAllPlants = () => dispatch => {
+  debugger
   return PlantApiUtils.fetchAllPlants()
-    .then(plants => dispatch(receiveAllPlants))
+    .then(payload => {
+      debugger
+      dispatch(receiveAllPlants(payload.data))})
 };
 
 export const fetchPlant = (plantId) => dispatch => {
