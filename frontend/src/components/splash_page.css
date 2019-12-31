@@ -43,6 +43,15 @@ body,html{
     flex-direction: row;
     align-items: center;
     position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0.625rem 0px;
+}
+.nav-stuff{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nav-prompts{
+    margin-left: 40px;
 }
 .signup{
         color: #2b4624;
@@ -99,11 +108,28 @@ body,html{
     opacity: 100%;
 }
 .plantr-text-logo{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 15px;
     font-size: 25px;
     color: #2b4624;
     opacity: 100%;
     font-weight: bold;
+    margin-left: 100px;
 }
 
+
+.plantr-logo{
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+.plantr{
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1.75s;
+}

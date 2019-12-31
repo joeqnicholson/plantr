@@ -34,6 +34,10 @@ class Garden extends React.Component {
                 </div>
             );
         }
+        return(
+            null
+        )
+       
     }
 }
 

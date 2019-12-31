@@ -1,6 +1,5 @@
 .signup-form-container{
     display: flex;
-
     height: 100%;
 }
 .signup-form{
@@ -8,12 +7,31 @@
     justify-content: center;
     flex-direction: column;
     width: 300px;
-    border: 1px solid rgb(56, 77, 58);
+    border: 1px solid rgb(217, 230, 218);
     border-radius: 5px;
     padding: 30px;
     background-color: white;
-
+    box-shadow: rgba(0, 0, 1, 0.3) 2px 2px 0.9rem 0px;
 }
+
+.signup-form, .plantr{
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .5s;
+}
+
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .input-session{
     width: 100%;
     padding: 12px 20px;
