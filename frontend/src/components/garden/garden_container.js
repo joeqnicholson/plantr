@@ -1,9 +1,11 @@
 import {connect} from 'react-redux';
 import Garden from './garden';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({entities, session}) => {
+    const ownedPlants = Object.values(entities.ownedPlants);
     return {
-
+        ownedPlants,
+        plants: entities.plants
     }
 };
 
