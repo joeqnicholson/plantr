@@ -25,9 +25,9 @@ class NavBar extends React.Component {
       )
     } else {
       return (
-        <div class='signup-login-pompts'>
-          <Link class='signup'to={'/signup'}>join</Link>
-          <Link class='signup'to={'/login'}>login</Link>
+        <div className='signup-login-pompts'>
+          <Link className='signup'to={'/signup'}>Signup</Link>
+          <Link className='signup'to={'/login'}>Login</Link>
         </div>
       )
     }
@@ -35,8 +35,8 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div class='navbar'>
-        <div class='plantr-text-logo'>plantr</div>
+      <div className='navbar'>
+        <div className='plantr-text-logo'>plantr</div>
         { this.getLinks() }
       </div>
     )

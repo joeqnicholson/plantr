@@ -6,6 +6,7 @@ import SplashPage from './splash_page';
 import NavBarContainer from './nav/navbar_container';
 import LoginFormContainer from './session/login_form_container'
 import SignupFormContainer from './session/signup_form_container'
+import PlantIndexContainer from './plants/plant_index_container';
 import GardenContainer from './garden/garden_container';
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
       <AuthRoute exact path="/" component={SplashPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute exact path="/plants" component={PlantIndexContainer} />
       <AuthRoute exact path="/garden/:userId" component={GardenContainer} />
     </Switch>
   </div>
