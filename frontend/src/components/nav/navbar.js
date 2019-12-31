@@ -37,7 +37,7 @@ class NavBar extends React.Component {
     return (
       <div class='navbar'>
         <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet"/>
-        <div class='plantr-text-logo'></div>
+        <div class='plantr-text-logo'>plantr</div>
         { this.getLinks() }
       </div>
     )

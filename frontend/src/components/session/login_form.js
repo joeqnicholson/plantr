@@ -55,22 +55,24 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="signup-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text"
+          <div className="signup-form">
+            <br />
+            <div class='session-title'>Log In</div>
+            <input class='input-session'type="text"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
             />
             <br />
-            <input type="password"
+            <input class='input-session'type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+            <input class='input-session-submit'type="submit" value="Submit" />
             {this.handleErrors()}
           </div>
         </form>
@@ -80,3 +82,4 @@ class LoginForm extends React.Component {
 }
 
 export default withRouter(LoginForm);
+
