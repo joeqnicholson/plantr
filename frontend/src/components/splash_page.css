@@ -1,0 +1,91 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+.plantr{
+    height: 100%;
+}
+body,html{
+    height: 100%;
+}
+#root{
+    height: 100%;
+}
+
+.homepage{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.navbar{
+    width: 100%;
+    height: 64px;
+    
+    background-color: #fad646;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.signup{
+        color: #2b4624;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+}
+.main-content{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.image-background{
+    height: auto;
+    background-image: url(https://cdn.dealspotr.com/ds-images/articles/interior-design-micro-influencers_G9e0QbVjlF.jpg) ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.plantr-center-wrapping{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    opacity: 100%;
+    filter: alpha(opacity=20)
+}
+.plantr-logo{
+    height: 100px;
+    width: 100px;
+    background-image: url(https://image.flaticon.com/icons/svg/1030/1030154.svg);
+    opacity: 100%;
+}
+.plantr-text-logo{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 15px;
+    font-size: 25px;
+    color: #2b4624;
+    opacity: 100%;
+    font-weight: bold;
+}
+
