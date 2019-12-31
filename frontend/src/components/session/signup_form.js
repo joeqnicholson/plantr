@@ -56,38 +56,41 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br />
-            <div class='session-title'>Sign Up</div>
-            <input class='input-session'type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder="Email"
-            />
-            <br />
-            <input class='input-session'type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="Username"
-            />
-            <br />
-            <input class='input-session'type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-            <br />
-            <input class='input-session'type="password"
-              value={this.state.password2}
-              onChange={this.update('password2')}
-              placeholder="Confirm Password"
-            />
-            <br />
-            <input class='input-session-submit'type="submit" value="Submit" />
-            {this.handleErrors()}
-          </div>
-        </form>
+        <div className="image-background">
+          <form onSubmit={this.handleSubmit}>
+            <div className="signup-form">
+              <br />
+              <div class='session-title'>Sign Up</div>
+              <input class='input-session'type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                placeholder="Email"
+              />
+              <br />
+              <input class='input-session'type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="Username"
+              />
+              <br />
+              <input class='input-session'type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+              />
+              <br />
+              <input class='input-session'type="password"
+                value={this.state.password2}
+                onChange={this.update('password2')}
+                placeholder="Confirm Password"
+              />
+              <br />
+              <input class='input-session-submit'type="submit" value="Join" />
+              {this.handleErrors()}
+
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

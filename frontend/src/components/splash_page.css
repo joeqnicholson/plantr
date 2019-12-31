@@ -52,6 +52,25 @@ body,html{
         font-size: 15px;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
+        background-color: transparent;
+
+}
+.signup-login-prompts{
+    
+}
+.signout{
+    color: #2b4624;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid  #2b4624;
+    border-radius: 4px;
+    display: inline-block;
 }
 .main-content{
     display: flex;
@@ -59,13 +78,13 @@ body,html{
     width: 100%;
 }
 .image-background{
-    height: auto;
-    background-image: url(https://cdn.dealspotr.com/ds-images/articles/interior-design-micro-influencers_G9e0QbVjlF.jpg) ;
+    height:auto ;
+    background-image: url(https://grimeo-seeds.s3.amazonaws.com/plantrbackground.png) ;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-size: cover;
 }
 .plantr-center-wrapping{
     display: flex;
