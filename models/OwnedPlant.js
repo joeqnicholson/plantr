@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const OwnedPlantSchema = new Schema({
   userId: {
-    type: Number,
+    type: String,
     required: true
   },
   plantId: {
-    type: Number,
+    type: String,
     required: true
   },
   nickname: {
