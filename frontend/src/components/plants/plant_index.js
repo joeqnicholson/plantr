@@ -7,12 +7,10 @@ class PlantIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchAllPlants();
   }
 
   render() {
-    debugger
     const plantList = this.props.plants.map( plant => {
       return <PlantIndexItem key={plant._id} plant={plant} />
     });
