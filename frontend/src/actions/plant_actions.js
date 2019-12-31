@@ -18,10 +18,8 @@ const receivePlant = plant => {
 };
 
 export const fetchAllPlants = () => dispatch => {
-  debugger
   return PlantApiUtils.fetchAllPlants()
     .then(payload => {
-      debugger
       dispatch(receiveAllPlants(payload.data))})
 };
 

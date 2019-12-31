@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const fetchAllPlants = () => {
-  debugger
   return axios.get('/api/plants')
 };
 
