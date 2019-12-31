@@ -1,7 +1,7 @@
 .signup-form-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
+
+    height: 100%;
 }
 .signup-form{
     display: flex;
@@ -11,7 +11,8 @@
     border: 1px solid rgb(56, 77, 58);
     border-radius: 5px;
     padding: 30px;
-    margin-top: 40px;
+    background-color: white;
+
 }
 .input-session{
     width: 100%;

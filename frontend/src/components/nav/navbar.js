@@ -19,8 +19,8 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <Link to={'/plants'}>All Plants</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+          <Link to={'/plants'} class='signup'>All Plants</Link>
+          <button onClick={this.logoutUser} class='signout'>logout</button>
         </div>
       )
     } else {
@@ -36,7 +36,6 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className='navbar'>
-        <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet"/>
         <div className='plantr-text-logo'>plantr</div>
         { this.getLinks() }
       </div>
