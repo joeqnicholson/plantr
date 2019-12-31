@@ -10,9 +10,9 @@ const GardenIndexItem=props=>{
                 <div className='plant-info'>
                     {
                         props.ownedPlants.nickname ? <div className='nick-name'>{props.ownedPlant.nickname}</div> :
-                        <div className='nick-name'>{props.ownedPlants.name}</div>
+                        <div className='nick-name'>{props.ownedPlants.plant.name}</div>
                     }
-                    <div className='latin-name'>{props.ownedPlant.plant.latin-name}</div>
+                    <div className='latin-name'>{props.ownedPlant.plant.latin_name}</div>
                 </div>
             </div>
         </div>
