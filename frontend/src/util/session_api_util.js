@@ -9,3 +9,11 @@ export const setAuthToken = token => {
     delete axios.defaults.headers.common['Authorization'];
   }
 };
+
+export const signup = user => {
+  return axios.post('/api/users/register', user);
+};
+
+export const login = user => {
+  return axios.post('/api/users/login', user);
+};
