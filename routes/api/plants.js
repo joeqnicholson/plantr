@@ -6,24 +6,21 @@ const passport = require('passport');
 const Plant = require('../../models/Plant');
 const validatePlantInput = require('../../validation/plants');
 
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the plant route" });
-});
+// router.get("/test", (req, res) => {
+//     res.json({ msg: "This is the plant route" });
+// });
 
+// Plants Index
 router.get("/", (req, res) => {
-  res.json({ msg: "This is the plant index"});
-  // Plant.all().then(plants => res.json(plants))
+  Plant.find().then(plants => res.json(plants))
 })
 
-// router.get("/userId" (req, res) => {
-//   res.json({ msg: "This is the user's garden"});
-//   // 
-// })
-
+// Plants Show
 router.get("/:plantId", (req, res) => {
-  res.json({ msg: "This is the plant show" })
-  // Plant.findOne({ id: req.params.plantId })
-  //   .then(plant => { res.json(plant) })
+  const id = req.params.plantId;
+  Plant.findById(id)
+    .then(plant => { res.json(plant) })
+    .catch(err => res.status(404).json({ noPlantFound: "No plant found with this id" }))
 })
 
 module.exports = router;
