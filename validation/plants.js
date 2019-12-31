@@ -43,6 +43,14 @@ module.exports = function validatePlantsInput(data) {
     errors.light = "Light field is required."
   }
 
+  if (Validator.isEmpty(data.imgUrl)) {
+    errors.imgUrl = "imgUrl field is required."
+  }
+
+  if (Validator.isUrl(data.imgUrl)) {
+    errors.imgUrl = "Improper image url."
+  }
+
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required.";
   }

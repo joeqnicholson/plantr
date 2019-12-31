@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.schema;
+const Schema = mongoose.Schema;
 
 const PlantSchema = new Schema({
     name: {
@@ -28,6 +28,10 @@ const PlantSchema = new Schema({
     },
     misc: {
         type: String
+    },
+    imgUrl: {
+      type: String,
+      required: true
     },
     date: {
         type: Date,
