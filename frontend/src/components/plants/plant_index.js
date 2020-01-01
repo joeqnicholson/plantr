@@ -25,11 +25,11 @@ class PlantIndex extends React.Component {
     // let job = schedule.scheduleJob(rule, function(){
     //   console.log("test");
     // });
-    NotificationApiUtils.createNotification();
+    NotificationApiUtils.createNotification({name: "test job"});
   }
 
   cancelAlert() {
-    NotificationApiUtils.cancelNotification();
+    NotificationApiUtils.cancelNotification({name: "test job"});
   }
 
   render() {
