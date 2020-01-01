@@ -17,19 +17,12 @@ class PlantIndex extends React.Component {
     this.props.fetchAllPlants();
   }
 
-  setAlert() {
-    // console.log("init");
-    // let rule = new schedule.RecurrenceRule();
-    // rule.minute = new schedule.Range(0, 59, 1);
-    
-    // let job = schedule.scheduleJob(rule, function(){
-    //   console.log("test");
-    // });
-    NotificationApiUtils.createNotification({name: "test job"});
+  setAlert(name) {
+    NotificationApiUtils.createNotification({ name });
   }
 
-  cancelAlert() {
-    NotificationApiUtils.cancelNotification({name: "test job"});
+  cancelAlert(name) {
+    NotificationApiUtils.cancelNotification({ name });
   }
 
   render() {
@@ -40,8 +33,10 @@ class PlantIndex extends React.Component {
     return (
       <div>
         {plantList}
-        <button onClick={this.setAlert}>10 seconds</button>
-        <button onClick={this.cancelAlert}>Cancel</button>
+        <button onClick={() => this.setAlert("A")}>A</button>
+        <button onClick={() => this.setAlert("B")}>B</button>
+        <button onClick={() => this.cancelAlert("A")}>Cancel A</button>
+        <button onClick={() => this.cancelAlert("B")}>Cancel B</button>
       </div>
     )
   }
