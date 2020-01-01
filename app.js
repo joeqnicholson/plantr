@@ -9,6 +9,7 @@ const passport = require("passport");
 // Import routes
 const users = require("./routes/api/users");
 const plants = require("./routes/api/plants");
+const notifications = require("./routes/api/notifications");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -27,6 +28,7 @@ require("./config/passport")(passport);
 
 app.use("/api/users", users);
 app.use("/api/plants", plants);
+app.use("/api/notifications", notifications);
 
 // Port settings
 const port = process.env.PORT || 5000;
