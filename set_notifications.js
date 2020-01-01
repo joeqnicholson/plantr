@@ -30,7 +30,7 @@ const sendEmail = (to, subject, message) => {
 //this interval timer should get triggered as soon as a user adds a new plant to their roster
 const setNotifications = (email, username, plantName, waterAmount) => {
     sendEmail(
-        `${email}`,
+        email,
 
         //subject
         `Time to water your ${plantName}!`,
@@ -40,4 +40,5 @@ const setNotifications = (email, username, plantName, waterAmount) => {
     );
 };
 
-export default setNotifications;
+// export default setNotifications;
+module.exports = sendEmail;
