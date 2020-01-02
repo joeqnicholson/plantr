@@ -1,14 +1,29 @@
 .garden-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    height: 100%;
 }
 
 .garden-body {
-    background-color: rgb(107, 189, 107);
     border: 1px solid white;
     border-radius: 4px;
     display: flex;
     justify-content: center;
+    height: 100%;
     align-items: center;
+}
+
+.garden-items-wrapper {
+    background-color: rgba(107, 189, 107, 0.205);
+    display: flex;
+    flex-direction: row;
+}
+
+.info-and-picture {
+    width: 100%;
+}
+
+.plant-img {
+    height: 75px;
+    width: 75px;
 }

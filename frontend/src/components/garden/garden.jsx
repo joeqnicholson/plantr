@@ -15,19 +15,16 @@ class Garden extends React.Component {
     }
 
     render() {
-        if(!this.props.ownedPlants.plant) {
+        if(this.props.ownedPlants.length === 0) {
             return null;
         } else {
-            debugger
-            this.props.ownedPlants.forEach((ownedPlant) => {
-                ownedPlant.plant = this.props.plants.filter((plant) => {
-                    return plant.id === ownedPlant.plantId;
-                }).first;
-            });
+            // if (typeof this.props.ownedPlants[0].plant === 'undefined') {
+            //     return null;
+            // }
 
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
-                    <GardenIndexItem ownedPlant={ownedPlant}/>
+                    <GardenIndexItem key={ownedPlant.id} ownedPlant={ownedPlant}/>
                 );
             });
 
