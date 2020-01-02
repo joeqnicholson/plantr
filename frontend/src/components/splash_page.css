@@ -61,21 +61,8 @@ body,html{
 .nav-prompts{
     margin-left: 40px;
 }
-.signup{
-        color: #2b4624;
-        padding: 10px 10px;
-        text-align: center;
-        margin-left: 10px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 15px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        background-color: transparent;
 
-}
-
-.garden {
+.signup {
     color: #2b4624;
     padding: 10px 10px;
     margin-right: 10px;
@@ -86,6 +73,16 @@ body,html{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: transparent; 
+}
+
+.signup:hover {
+    color: rgb(76, 136, 76);
+}
+
+.signout:hover {
+    border-color: rgb(76, 136, 76);
+    color: rgb(76, 136, 76);
+
 }
 
 .signout{
@@ -102,6 +99,7 @@ body,html{
     border-radius: 4px;
     display: inline-block;
 }
+
 .main-content{
     display: flex;
     height: 100%;
