@@ -18,7 +18,7 @@ class PlantShow extends React.Component {
 
     if (plant) {
       return (
-        <div>
+        <div className="plant-show-container">
           <h1>{plant.name}</h1>
           <h1>{plant.latinName}</h1>
           <h1>{plant.frequency}</h1>
