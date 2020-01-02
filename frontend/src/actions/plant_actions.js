@@ -25,5 +25,5 @@ export const fetchAllPlants = () => dispatch => {
 
 export const fetchPlant = (plantId) => dispatch => {
   return PlantApiUtils.fetchPlant(plantId)
-    .then(plant => dispatch(receivePlant(plant)))
+    .then(payload => dispatch(receivePlant(payload.data)))
 };
