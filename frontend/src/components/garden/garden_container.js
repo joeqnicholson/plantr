@@ -3,8 +3,9 @@ import Garden from './garden';
 import {
     addOwnedPlant,
     deleteOwnedPlant,
-    getOwnedPlants
+    fetchOwnedPlants
 } from '../../actions/owned_plant_actions';
+import { fetchAllPlants } from '../../actions/plant_actions';
 
 const mapStateToProps = ({entities, ui}) => {
     return {
@@ -18,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addOwnedPlant: ownedPlant => dispatch(addOwnedPlant(ownedPlant)),
         deleteOwnedPlant: ownedPlant => dispatch(deleteOwnedPlant(ownedPlant)),
-        getOwnedPlants: () => dispatch(getOwnedPlants())
+        fetchOwnedPlants: (userId) => dispatch(fetchOwnedPlants(userId)),
+        fetchAllPlants: () => dispatch(fetchAllPlants())
     };
 };
 

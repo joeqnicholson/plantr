@@ -2,6 +2,7 @@ import React from 'react';
 import '../garden.css';
 import GardenIndexItem from './garden_index_item';
 import AddOwnedPlantModalContainer from '../modals/add_owned_plant_modal_container';
+import {withRouter} from 'react-router-dom';
 
 class Garden extends React.Component {
     constructor(props) {
@@ -9,21 +10,21 @@ class Garden extends React.Component {
     }
 
     componentDidMount() {
-        this.props.ownedPlants.forEach((ownedPlant) => {
-            ownedPlant.plant = this.props.plants.filter((plant) => {
-                return plant.id === ownedPlant.plantId;
-            }).first;
-        });
+        this.props.fetchOwnedPlants(this.props.match.params.userId);
+        this.props.fetchAllPlants();
     }
 
     render() {
-        if(!this.props.ownedPlants) {
-            this.props.getOwnedPlants();
-            return null;
-        } else if (!this.props.ownedPlants.first.plant) {
+        if(!this.props.ownedPlants.plant) {
             return null;
         } else {
             debugger
+            this.props.ownedPlants.forEach((ownedPlant) => {
+                ownedPlant.plant = this.props.plants.filter((plant) => {
+                    return plant.id === ownedPlant.plantId;
+                }).first;
+            });
+
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
                     <GardenIndexItem ownedPlant={ownedPlant}/>
@@ -42,11 +43,7 @@ class Garden extends React.Component {
                 </div>
             );
         }
-        // return(
-        //     null
-        // )
-       
     }
 }
 
-export default Garden;
+export default withRouter(Garden);
