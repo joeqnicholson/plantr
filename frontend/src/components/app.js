@@ -11,8 +11,11 @@ import PlantShowContainer from './plants/plant_show_container';
 import GardenContainer from './garden/garden_container';
 
 const App = () => (
-  <div className='plantr-post-nav'>
+  <div className='plantr'>
+    <div class='nav-wrapper'>
     <NavBarContainer />
+    </div>
+    <div className='under-nav'>
     <Switch>
       <AuthRoute exact path="/" component={SplashPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -21,6 +24,7 @@ const App = () => (
       <ProtectedRoute exact path="/plants/:plantId" component={PlantShowContainer} />
       <ProtectedRoute exact path="/garden/:userId" component={GardenContainer} />
     </Switch>
+    </div>
   </div>
 );
 

@@ -12,12 +12,16 @@ class PlantIndex extends React.Component {
   }
 
   render() {
+    const { plants } = this.props;
     const plantList = this.props.plants.map( plant => {
-      return (
-        <div className='plant-index-item'>
-          <PlantIndexItem key={plant._id} plant={plant} />
-        </div>
-      )
+      for (let i = 0; i < plants.length; i++) {
+        return (
+          <div className='plant-index-item'>
+            <PlantIndexItem key={plant._id} plant={plant}/>
+          </div>
+        )        
+      }
+      
     });
 
     return (

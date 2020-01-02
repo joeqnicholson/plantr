@@ -19,9 +19,53 @@
     height: 300px;
     display: flex;
     justify-content: center;
-    padding: 3px;
     margin: 26px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0.6rem 0px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0.4rem 0px;
     background-color: var(--item-background-color)
 }
+.plant-index-item{
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1.75s;
+}
+.plant-index-item:hover{
+    background-color: rgba(173, 204, 190, 0.253);
+}
+
+.plant-index-item-contents{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img-wrapper{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.plant-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+.plant-name{
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.plant-latin-name{
+    text-align: center;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 50%;
+}
+
+.plant-name:hover, .plant-latin-name:hover{
+    text-decoration: underline;
+}
+

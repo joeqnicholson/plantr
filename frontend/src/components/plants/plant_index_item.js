@@ -18,13 +18,14 @@ class PlantIndexItem extends React.Component {
     const { plant } = this.props;
 
     return (
-      <div>
+      <div className='plant-index-item-contents' >
         <article onClick={this.handleClick}>
           <div className='img-wrapper'>
             <img src={plant.imgUrl} height="200" />
           </div>
           <div className='plant-info'>
             <div className='plant-name'>{plant.name}</div>
+            <div className='plant-latin-name'>{plant.latinName}</div>
           </div>
         </article>
       </div>
