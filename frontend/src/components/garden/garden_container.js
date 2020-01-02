@@ -7,7 +7,6 @@ import {
 } from '../../actions/owned_plant_actions';
 
 const mapStateToProps = ({entities, ui}) => {
-    debugger
     return {
         ownedPlants: entities.ownedPlants,
         plants: entities.plants,

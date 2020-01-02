@@ -9,15 +9,11 @@ class Garden extends React.Component {
     }
 
     componentDidMount() {
-        
-
-        debugger
         this.props.ownedPlants.forEach((ownedPlant) => {
             ownedPlant.plant = this.props.plants.filter((plant) => {
                 return plant.id === ownedPlant.plantId;
             }).first;
         });
-        debugger
     }
 
     render() {
