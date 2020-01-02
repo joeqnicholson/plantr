@@ -11,7 +11,7 @@ import PlantShowContainer from './plants/plant_show_container';
 import GardenContainer from './garden/garden_container';
 
 const App = () => (
-  <div className='plantr'>
+  <div className='plantr-post-nav'>
     <NavBarContainer />
     <Switch>
       <AuthRoute exact path="/" component={SplashPage} />
