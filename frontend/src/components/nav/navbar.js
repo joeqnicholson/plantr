@@ -27,7 +27,8 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className='nav-stuff'>
-          <div className='plantr-text-logo'>plantr</div>
+          <div className='plantr-text-logo'><Link className='plantr-text-logo'to={'/'}>plantr</Link>
+</div>
           <div className='nav-prompts'>
             <Link className='signup'to={'/signup'}>Signup</Link>
             <Link className='signup'to={'/login'}>Login</Link>
