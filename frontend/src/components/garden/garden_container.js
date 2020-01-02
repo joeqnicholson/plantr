@@ -8,8 +8,17 @@ import {
 import { fetchAllPlants } from '../../actions/plant_actions';
 
 const mapStateToProps = ({entities, ui}) => {
+    let { ownedPlants, plants } = entities;
+    if(ownedPlants.length !== 0) {
+        ownedPlants.forEach((ownedPlant) => {
+            ownedPlant.plant = plants.find((plant) => {
+                return plant._id === ownedPlant.plantId;
+            });
+        });
+    }
+
     return {
-        ownedPlants: entities.ownedPlants,
+        ownedPlants: ownedPlants,
         plants: entities.plants,
         modal: ui.modal
     };
