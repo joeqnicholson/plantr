@@ -2,6 +2,9 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 
+//temporary fix, will delete later
+import { Route} from 'react-router-dom';
+
 import SplashPage from './splash_page';
 import NavBarContainer from './nav/navbar_container';
 import LoginFormContainer from './session/login_form_container'
@@ -19,7 +22,10 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/plants" component={PlantIndexContainer} />
       <ProtectedRoute exact path="/plants/:plantId" component={PlantShowContainer} />
-      <AuthRoute exact path="/garden/:userId" component={GardenContainer} />
+      <Route exact path="/garden" component={GardenContainer} />
+
+      {/* I need to figure out how to de-salt the user id in order to properly navigate to garden this way */}
+      {/* <AuthRoute exact path="/garden/:userId" component={GardenContainer} /> */}
     </Switch>
   </div>
 );

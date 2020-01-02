@@ -9,15 +9,25 @@ class Garden extends React.Component {
     }
 
     componentDidMount() {
+        
+
+        debugger
         this.props.ownedPlants.forEach((ownedPlant) => {
-            ownedPlant.plant = this.props.plants[ownedPlant.plantId];
+            ownedPlant.plant = this.props.plants.filter((plant) => {
+                return plant.id === ownedPlant.plantId;
+            }).first;
         });
+        debugger
     }
 
     render() {
-        if(!this.props.ownedPlants.first.plant) {
+        if(!this.props.ownedPlants) {
+            this.props.getOwnedPlants();
+            return null;
+        } else if (!this.props.ownedPlants.first.plant) {
             return null;
         } else {
+            debugger
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
                     <GardenIndexItem ownedPlant={ownedPlant}/>
@@ -36,9 +46,9 @@ class Garden extends React.Component {
                 </div>
             );
         }
-        return(
-            null
-        )
+        // return(
+        //     null
+        // )
        
     }
 }
