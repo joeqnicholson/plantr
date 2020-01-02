@@ -1,6 +1,5 @@
 .garden-wrapper {
-    background-color: rgba(107, 189, 107, 0.205);
-    display: flex;
+    background-color: var(--background-color);
     justify-content: center;
     height: 100%;
 }
