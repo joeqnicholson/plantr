@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/owned_plants_api_util';
 
 export const RECEIVE_OWNED_PLANT = "RECEIVE_OWNED_PLANT";
+export const RECEIVE_OWNED_PLANTS = "RECEIVE_OWNED_PLANTS";
 export const REMOVE_OWNED_PLANT = "REMOVE_OWNED_PLANT";
 export const RECEIVE_OWNED_PLANT_ERRORS = "RECEIVE_OWNED_PLANT_ERRORS";
 
@@ -17,6 +18,13 @@ export const removeOwnedPlant = ownedPlant => {
         ownedPlant
     };
 };
+
+export const receiveOwnedPlants = (ownedPlants) => {
+    return {
+        type: RECEIVE_OWNED_PLANTS,
+        ownedPlants
+    }
+}
 
 export const receiveErrors = errors => ({
     type: RECEIVE_OWNED_PLANT_ERRORS,
@@ -50,5 +58,15 @@ export const deleteOwnedPlant = ownedPlant => dispatch => {
             err => {
                 dispatch(receiveErrors(err.response.data));
             } 
+        )
+}
+
+export const fetchOwnedPlants = () => dispatch => {
+    APIUtil.fetchOwnedPlants()
+        .then(
+            res => {
+                const {ownedPlants} = res.data;
+                dispatch(receiveOwnedPlants(ownedPlants));
+            }
         )
 }

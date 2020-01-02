@@ -21,6 +21,7 @@ class NavBar extends React.Component {
         <div className='nav-stuff'>
           <div className='plantr-text-logo'>plantr</div>
           <Link to={'/plants'} class='signup'>All Plants</Link>
+          {/* <Link to={`/garden/${this.props.userId}`} class='garden'>Garden</Link> */}
           <Link to={'/garden'} class='garden'>Garden</Link>
           <button onClick={this.logoutUser} class='signout'>logout</button>
         </div>
