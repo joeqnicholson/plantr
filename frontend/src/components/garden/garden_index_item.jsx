@@ -2,7 +2,6 @@ import React from 'react';
 import '../garden.css';
 
 const GardenIndexItem= props => {
-    debugger
     return(
         <div className='plant-index-item'>
             <div className='info-and-picture'>
