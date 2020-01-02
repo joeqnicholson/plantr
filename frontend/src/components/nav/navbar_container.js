@@ -3,9 +3,10 @@ import { logout } from '../../actions/session_actions';
 import NavBar from './navbar';
 
 const mapStateToProps = state => {
+  debugger
   return {
     loggedIn: state.session.isAuthenticated,
-    userId: state.session.userId
+    currentUser: state.session.user
   };
 };
 

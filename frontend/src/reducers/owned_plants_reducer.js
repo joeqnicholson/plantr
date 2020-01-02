@@ -12,7 +12,8 @@ const ownedPlantsReducer = (oldState = {}, action) => {
             newState[action.ownedPlant.id] = action.ownedPlant;
             return newState;
         case RECEIVE_OWNED_PLANTS:
-            return action.ownedPlants;
+            newState = action.ownedPlants;
+            return newState;
         case REMOVE_OWNED_PLANT:
             delete newState[action.ownedPlant.id];
             return newState;
