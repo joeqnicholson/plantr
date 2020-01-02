@@ -1,14 +1,40 @@
 .garden-wrapper {
+    background-color: var(--background-color);
+    justify-content: center;
+    height: 100%;
+}
+
+.garden-body {
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.garden-items-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+
+.garden-wrapper .info-and-picture {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.garden-wrapper .plant-img {
+    height: 75px;
+    width: 75px;
+}
+
+.garden-wrapper .plant-index-item {
+    height: 150px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.garden-body {
-    background-color: rgb(107, 189, 107);
-    border: 1px solid white;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
+import '../garden.css';
 
-const GardenIndexItem=props=>{
+const GardenIndexItem= props => {
     return(
         <div className='plant-index-item'>
             <div className='info-and-picture'>
                 <div className='plant-picture'>
-                    <img src={props.ownedPlants.plant.imgUrl}/>
+                    <img className="plant-img" src={props.ownedPlant.plant.imgUrl}/>
                 </div>
                 <div className='plant-info'>
                     {
-                        props.ownedPlants.nickname ? <div className='nick-name'>{props.ownedPlant.nickname}</div> :
-                        <div className='nick-name'>{props.ownedPlants.plant.name}</div>
+                        props.ownedPlant.nickname ? <div className='nick-name'>{props.ownedPlant.nickname}</div> :
+                        <div className='nick-name'>{props.ownedPlant.plant.latinName}</div>
                     }
-                    <div className='latin-name'>{props.ownedPlant.plant.latin_name}</div>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import {
     REMOVE_OWNED_PLANT
 } from '../actions/owned_plant_actions';
 
-const ownedPlantsReducer = (oldState = {}, action) => {
+const ownedPlantsReducer = (oldState = [], action) => {
     Object.freeze(oldState);
     let newState = Object.assign(oldState);
     switch(action.type) {

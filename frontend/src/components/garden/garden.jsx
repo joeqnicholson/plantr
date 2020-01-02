@@ -14,20 +14,19 @@ class Garden extends React.Component {
         this.props.fetchAllPlants();
     }
 
+    componentWillUnmount() {
+        this.props.fetchOwnedPlants(this.props.match.params.userId);
+        this.props.fetchAllPlants();
+    }
+
     render() {
-        if(!this.props.ownedPlants.plant) {
+        if(this.props.ownedPlants.length === 0) {
             return null;
         } else {
-            debugger
-            this.props.ownedPlants.forEach((ownedPlant) => {
-                ownedPlant.plant = this.props.plants.filter((plant) => {
-                    return plant.id === ownedPlant.plantId;
-                }).first;
-            });
 
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
-                    <GardenIndexItem ownedPlant={ownedPlant}/>
+                    <GardenIndexItem key={ownedPlant.id} ownedPlant={ownedPlant}/>
                 );
             });
 
