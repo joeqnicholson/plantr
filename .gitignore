@@ -1,4 +1,6 @@
-/config
+/config/keys.js
+/config/keys_dev.js
+/config/passport.js
 /node_modules
 .DS_Store
 frontend/node_modules
