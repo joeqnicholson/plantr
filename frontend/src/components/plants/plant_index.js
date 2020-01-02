@@ -18,7 +18,8 @@ class PlantIndex extends React.Component {
   }
 
   setAlert(name) {
-    NotificationApiUtils.createNotification({ name });
+    const frequency = 1;
+    NotificationApiUtils.createNotification({ name, frequency });
   }
 
   cancelAlert(name) {
