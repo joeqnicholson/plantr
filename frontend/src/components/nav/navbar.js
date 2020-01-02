@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // import './navbar.css';
 
 class NavBar extends React.Component {
@@ -13,6 +13,7 @@ class NavBar extends React.Component {
   logoutUser(event) {
     event.preventDefault();
     this.props.logout();
+    this.props.history.push('/');
   }
 
   getLinks() {
@@ -20,14 +21,16 @@ class NavBar extends React.Component {
       return (
         <div className='nav-stuff'>
           <div className='plantr-text-logo'>plantr</div>
-          <Link to={'/plants'} class='signup'>All Plants</Link>
-          <button onClick={this.logoutUser} class='signout'>logout</button>
+          <Link to={'/plants'} className='signup'>All Plants</Link>
+          <Link to={`/garden/${this.props.currentUser.id}`} className='garden'>Garden</Link>
+          <button onClick={this.logoutUser} className='signout'>logout</button>
         </div>
       )
     } else {
       return (
         <div className='nav-stuff'>
-          <div className='plantr-text-logo'>plantr</div>
+          <div className='plantr-text-logo'><Link className='plantr-text-logo'to={'/'}>plantr</Link>
+</div>
           <div className='nav-prompts'>
             <Link className='signup'to={'/signup'}>Signup</Link>
             <Link className='signup'to={'/login'}>Login</Link>
@@ -47,4 +50,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

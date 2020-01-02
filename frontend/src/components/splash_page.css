@@ -17,7 +17,8 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .plantr{
     height: 100%;
@@ -57,6 +58,7 @@ body,html{
         color: #2b4624;
         padding: 10px 10px;
         text-align: center;
+        margin-left: 10px;
         text-decoration: none;
         display: inline-block;
         font-size: 15px;
@@ -64,6 +66,19 @@ body,html{
         font-weight: bold;
         background-color: transparent;
 
+}
+
+.garden {
+    color: #2b4624;
+    padding: 10px 10px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: transparent; 
 }
 
 .signout{
@@ -92,14 +107,11 @@ body,html{
     display: flex;
     justify-content: center;
     align-items: center;
+  
     background-size: cover;
 }
 .plantr-center-wrapping{
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    opacity: 100%;
-    filter: alpha(opacity=20)
 }
 .plantr-logo{
     height: 100px;
@@ -114,6 +126,7 @@ body,html{
     color: #2b4624;
     opacity: 100%;
     font-weight: bold;
+    text-decoration: none;
     margin-left: 100px;
 }
 
