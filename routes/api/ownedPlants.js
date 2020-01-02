@@ -64,11 +64,22 @@ router.patch("/:userId/:ownedPlantId",
       return res.status(400).json(errors)
     }
 
-    const targetOwnedPlant = { _id: req.params.ownedPlantId }
-    OwnedPlant.updateOne(targetOwnedPlant, updatedOwnedPlant)
+    const target = { _id: req.params.ownedPlantId }
+    OwnedPlant.updateOne(target, updatedOwnedPlant)
       .then(() => {
         res.json(updatedOwnedPlant)
       });
+  }
+)
+
+router.delete("/:userId/:ownedPlantId", 
+  passport.authenticate('jwt', { session: false }), 
+  (req, res) => {
+    // const target = { _id: req.params.ownedPlantId }
+    OwnedPlant.findByIdAndDelete(req.params.ownedPlantId)
+      .then(ownedPlant => {
+        res.json(ownedPlant)
+      })
   }
 )
 
