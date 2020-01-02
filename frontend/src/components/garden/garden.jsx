@@ -14,6 +14,11 @@ class Garden extends React.Component {
         this.props.fetchAllPlants();
     }
 
+    componentWillUnmount() {
+        this.props.fetchOwnedPlants(this.props.match.params.userId);
+        this.props.fetchAllPlants();
+    }
+
     render() {
         if(this.props.ownedPlants.length === 0) {
             return null;
