@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 // Import routes
 const users = require("./routes/api/users");
 const plants = require("./routes/api/plants");
+const notifications = require("./routes/api/notifications");
 const ownedPlants = require("./routes/api/ownedPlants");
 
 mongoose
@@ -37,6 +38,7 @@ require("./config/passport")(passport);
 
 app.use("/api/users", users);
 app.use("/api/plants", plants);
+app.use("/api/notifications", notifications);
 app.use("/api/ownedPlants", ownedPlants);
 
 // Port settings
