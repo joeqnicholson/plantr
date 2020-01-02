@@ -1,6 +1,7 @@
 import React from 'react';
 import PlantIndexItem from './plant_index_item';
 import '../plants.css'
+import { Link } from 'react-router-dom'
 
 class PlantIndex extends React.Component {
   constructor(props) {
@@ -12,11 +13,14 @@ class PlantIndex extends React.Component {
   }
 
   render() {
+    let i = 0;
     const plantList = this.props.plants.map( plant => {
       return (
-        <div className='plant-index-item'>
-          <PlantIndexItem key={plant._id} plant={plant} />
-        </div>
+        
+          <div className='plant-index-item'>
+            <PlantIndexItem key={plant._id} plant={plant} i={i}  />
+          </div>
+
       )
     });
 

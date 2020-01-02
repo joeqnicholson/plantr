@@ -3,7 +3,7 @@
     height: fit-content;
     display: flex;
     justify-content: center;
-    background-color: rgba(131, 182, 131, 0.11);
+    background-color: var(--background-color);
 }
 
 .middle-plant-wrapper{
@@ -14,14 +14,65 @@
     flex-direction: row;
 }
 
+
 .plant-index-item{
     width: 20%;
+    min-width: 250px;
     height: 300px;
+
+    margin: 26px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0.3rem 0px;
+    background-color: var(--item-background-color)
+}
+
+.plant-index-item:hover{
+    background-color: rgba(173, 204, 190, 0.089);
+    cursor: pointer; 
+    text-decoration: underline;
+}
+.plant-item-hover{
     display: flex;
     justify-content: center;
-    padding: 3px;
-    margin: 26px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0.6rem 0px;
-    background-color: rgba(107, 189, 107, 0.13);
+    width:100%;
+}
+
+.plant-index-item-contents{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.img-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+
+}
+
+
+.plant-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+.plant-name{
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+}
+.plant-latin-name{
+    text-align: center;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 50%;
+    text-decoration: none;
+}
+
+.plant-name:hover, .plant-latin-name:hover{
+    text-decoration: underline;
 }

@@ -21,7 +21,7 @@ class NavBar extends React.Component {
       return (
         <div className='nav-stuff'>
           <div className='plantr-text-logo'>plantr</div>
-          <Link to={'/plants'} className='signup'>All Plants</Link>
+          <Link to={'/plants'} className='nav-plants'>All Plants</Link>
           <Link to={`/garden/${this.props.currentUser.id}`} className='signup'>Garden</Link>
           <button onClick={this.logoutUser} className='signout'>logout</button>
         </div>
