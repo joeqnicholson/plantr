@@ -58,6 +58,7 @@ body,html{
         color: #2b4624;
         padding: 10px 10px;
         text-align: center;
+        margin-left: 10px;
         text-decoration: none;
         display: inline-block;
         font-size: 15px;
@@ -65,6 +66,19 @@ body,html{
         font-weight: bold;
         background-color: transparent;
 
+}
+
+.garden {
+    color: #2b4624;
+    padding: 10px 10px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: transparent; 
 }
 
 .signout{
