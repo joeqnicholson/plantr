@@ -18,9 +18,6 @@ class Garden extends React.Component {
         if(this.props.ownedPlants.length === 0) {
             return null;
         } else {
-            // if (typeof this.props.ownedPlants[0].plant === 'undefined') {
-            //     return null;
-            // }
 
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
