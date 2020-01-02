@@ -8,7 +8,6 @@ import {
 import { fetchAllPlants } from '../../actions/plant_actions';
 
 const mapStateToProps = ({entities, ui}) => {
-    debugger
     return {
         ownedPlants: entities.ownedPlants,
         plants: entities.plants,

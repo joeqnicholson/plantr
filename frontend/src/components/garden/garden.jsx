@@ -18,7 +18,6 @@ class Garden extends React.Component {
         if(!this.props.ownedPlants.plant) {
             return null;
         } else {
-            debugger
             this.props.ownedPlants.forEach((ownedPlant) => {
                 ownedPlant.plant = this.props.plants.filter((plant) => {
                     return plant.id === ownedPlant.plantId;
