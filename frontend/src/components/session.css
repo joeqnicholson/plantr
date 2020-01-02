@@ -64,3 +64,17 @@
     color: rgb(27, 185, 61);
     padding-bottom: 30px;
 }
+button:hover{
+    cursor: pointer;
+}
+
+button{
+    outline: none;
+}
+input{
+    outline: none;
+
+}
+textarea{
+    outline: none;
+}
