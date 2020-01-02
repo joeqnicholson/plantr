@@ -61,11 +61,11 @@ export const deleteOwnedPlant = ownedPlant => dispatch => {
         )
 }
 
-export const fetchOwnedPlants = () => dispatch => {
-    APIUtil.fetchOwnedPlants()
+export const fetchOwnedPlants = (userId) => dispatch => {
+    APIUtil.fetchOwnedPlants(userId)
         .then(
             res => {
-                const {ownedPlants} = res.data;
+                const ownedPlants = res.data;
                 dispatch(receiveOwnedPlants(ownedPlants));
             }
         )
