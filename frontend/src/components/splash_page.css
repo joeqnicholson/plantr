@@ -20,11 +20,18 @@ time, mark, audio, video {
     vertical-align: baseline;
     font-family: Arial, Helvetica, sans-serif;
 }
+.plantr-post-nav{
+    height: 100%;
+}
 .plantr{
     height: 100%;
+
+
+    
 }
 body,html{
     height: 100%;
+
 }
 #root{
     height: 100%;

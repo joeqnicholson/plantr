@@ -20,11 +20,11 @@ class PlantIndexItem extends React.Component {
     return (
       <div>
         <article onClick={this.handleClick}>
-          <div>
+          <div className='img-wrapper'>
             <img src={plant.imgUrl} height="200" />
           </div>
           <div className='plant-info'>
-            <div>{plant.name}</div>
+            <div className='plant-name'>{plant.name}</div>
           </div>
         </article>
       </div>
