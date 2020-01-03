@@ -3,6 +3,7 @@
     height: 100%;
 }
 .signup-form{
+    margin-top: 65px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -37,13 +38,25 @@
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid rgb(56, 77, 58);
+    border: 1.5px solid rgb(153, 168, 84);
     box-sizing: border-box;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
     color: rgb(56, 77, 58);
     height: 55px;
+    font-size: 16px;
 }
+
+.input-session:hover {
+    background: rgba(192, 240, 192, 0.103);
+}
+
+.input-session:focus {
+    background: rgba(192, 240, 192, 0.322);
+    border: 2px solid rgb(123, 136, 67);
+    
+}
+
 .input-session-submit{
     width: 100%;
     padding: 12px 20px;
@@ -56,13 +69,25 @@
     height: 55px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-size: 16px;
 }
+
+.input-session-submit:hover {
+    cursor: pointer;
+    background: rgb(21, 151, 49);
+}
+
+.input-session-submit:active {
+    background: rgb(17, 124, 40);
+}
+
 .session-title{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: rgb(27, 185, 61);
+    color: rgba(27, 185, 61, 0.753);
     padding-bottom: 30px;
+    font-size: 24px;
 }
 button:hover{
     cursor: pointer;
