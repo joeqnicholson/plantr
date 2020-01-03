@@ -1,6 +1,8 @@
 import React from 'react';
 import '../modal.css';
 import PlantIndexItem from '../plants/plant_index_item';
+import * as NotificationApiUtils from '../../util/notification_api_util';
+
 
 class AddOwnedPlantModal extends React.Component {
     constructor(props) {
@@ -12,6 +14,21 @@ class AddOwnedPlantModal extends React.Component {
         this.addOwnedPlant = this.addOwnedPlant.bind(this);
         this.setNickname = this.setNickname.bind(this);
         this.selectPlant = this.selectPlant.bind(this);
+
+        this.setAlert = this.setAlert.bind(this);
+        this.cancelAlert = this.cancelAlert.bind(this);
+    }
+
+    setAlert(name) {
+        const frequency = 1;
+        const plantName = "Snake";
+        const username = "Kenny";
+        const water = 100;
+        NotificationApiUtils.createNotification({ name, frequency, plantName, username, water });
+    }
+
+    cancelAlert(name) {
+        NotificationApiUtils.cancelNotification({ name });
     }
 
     selectPlant(plant) {
