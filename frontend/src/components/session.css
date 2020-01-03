@@ -10,7 +10,7 @@
     width: 300px;
     border: 1px solid rgb(217, 230, 218);
     border-radius: 5px;
-    padding: 30px;
+    padding: 20px 30px;
     background-color: white;
     box-shadow: rgba(0, 0, 1, 0.3) 2px 2px 0.9rem 0px;
 }
@@ -36,9 +36,9 @@
 .input-session{
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 5px 0;
     display: inline-block;
-    border: 1.5px solid rgb(153, 168, 84);
+    border: 1px solid rgba(27, 185, 61, 0.692);
     box-sizing: border-box;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
@@ -53,7 +53,7 @@
 
 .input-session:focus {
     background: rgba(192, 240, 192, 0.322);
-    border: 2px solid rgb(123, 136, 67);
+    border: 1.5px solid rgb(123, 136, 67);
     
 }
 
@@ -107,4 +107,14 @@ input{
 }
 textarea{
     outline: none;
+}
+
+.session-errors-ul {
+  margin-top: 10px;
+}
+
+.session-error-li {
+  margin-bottom: 1px;
+  list-style: none;
+  color: rgb(106, 106, 106);
 }
