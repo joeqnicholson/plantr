@@ -3,7 +3,7 @@
     height: fit-content;
     display: flex;
     justify-content: center;
-    background-color: rgba(131, 182, 131, 0.11);
+    background-color: rgba(255, 255, 255, 0.11);
 }
 
 .middle-plant-wrapper{
@@ -12,9 +12,20 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    height: 100%;
 }
 
 .plant-index-item{
+    width: 20%;
+    min-width: 250px;
+    height: 300px;
+    margin: 26px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0.3rem 0px;
+    background-color: var(--item-background-color)
+}
+
+.plus-index-item{
     width: 20%;
     min-width: 250px;
     height: 300px;
@@ -30,13 +41,19 @@
     justify-content: center;
     align-items: center;
     font-size: 200px;
-    background-color: rgba(0, 136, 72, 0.432);
+    background-color: rgba(0, 136, 72, 0.644);
     color: rgb(255, 255, 255);
     border-radius: 3px;
 }
 
 .plant-index-item:hover{
     background-color: rgba(173, 204, 190, 0.089);
+    cursor: pointer; 
+
+}
+
+.plus-index-item:hover{
+    background-color: rgba(0, 0, 0, 0.26);
     cursor: pointer; 
 
 }

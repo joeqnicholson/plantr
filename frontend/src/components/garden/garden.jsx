@@ -28,9 +28,6 @@ class Garden extends React.Component {
     }
 
     render() {
-        if(this.props.ownedPlants.length === 0) {
-            return null;
-        } else {
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
                     <div className='plant-index-item' onClick={e => e.stopPropagation()}>
@@ -52,12 +49,24 @@ class Garden extends React.Component {
                     modal = null;
                     break;
             }
+            if(this.props.ownedPlants.length === 0){
+                return(
+                    <div className='plant-wrapper' >
+                        {modal}
+                        <div className='middle-plant-wrapper'>
+                            <div className="plus-index-item" onClick={this.props.openAddModal}>
+                                    <div className='plant-index-item-plus'>+</div>
+                            </div>
+                        </div>
+                    </div>
+                    )
+            }
+            
             return (
                 <div className="plant-wrapper">
-                    {modal}
                     {/* <h1 className="garden-title">My Garden</h1> */}
                     <div className="middle-plant-wrapper">
-                            <div className="plant-index-item" onClick={this.props.openAddModal}>
+                            <div className="plus-index-item" onClick={this.props.openAddModal}>
                                 <div className='plant-index-item-plus'>
                                     +
                                 </div>
@@ -68,6 +77,6 @@ class Garden extends React.Component {
             );
         }
     }
-}
+
 
 export default withRouter(Garden);
