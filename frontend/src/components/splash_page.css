@@ -48,14 +48,30 @@ body,html{
 .navbar{
     width: 100%;
     height: 64px;
-    
     background-color: #fad646;
     display: flex;
     flex-direction: row;
     align-items: center;
     position: fixed;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0.625rem 0px;
+    animation-name: nav-bar-entrance;
+    animation-duration: 1s;
+    z-index: 3;
 }
+
+@keyframes nav-bar-entrance {
+  from {
+    position: absolute;
+    top: -10%;
+    opacity: 0;
+  }
+  to {
+    top: 0%;
+    position: absolute;
+    opacity: 1;
+  }
+}
+
 .nav-stuff{
     display: flex;
     flex-direction: row;
@@ -146,6 +162,11 @@ body,html{
     background-image: url(https://image.flaticon.com/icons/svg/1030/1030154.svg);
     opacity: 100%;
 }
+
+.planter-logo:hover {
+    cursor: pointer;
+}
+
 .plantr-text-logo{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 15px;
@@ -167,7 +188,7 @@ body,html{
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 2s;
+	animation-duration: 1.5s;
 }
 .plantr{
 	opacity: 1;
