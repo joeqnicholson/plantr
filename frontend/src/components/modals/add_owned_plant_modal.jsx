@@ -3,6 +3,7 @@ import '../modal.css';
 import PlantIndexItem from '../plants/plant_index_item';
 import * as NotificationApiUtils from '../../util/notification_api_util';
 
+import PlantModalIndexItem from './plant_modal_index_item';
 import {withRouter} from 'react-router-dom';
 
 class AddOwnedPlantModal extends React.Component {
@@ -74,7 +75,7 @@ class AddOwnedPlantModal extends React.Component {
             selected = (plant._id === this.props.selectedPlantId);
             return (
                 <div className='plant-index-item'>
-                    <PlantIndexItem
+                    <PlantModalIndexItem
                         key={plant._id}
                         plant={plant}
                         modalType={this.props.modalType}
