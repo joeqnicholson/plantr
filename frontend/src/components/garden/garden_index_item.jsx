@@ -3,7 +3,7 @@ import '../garden.css';
 
 const GardenIndexItem= props => {
     return(
-        <div className='plant-index-item'>
+        <div className='plant-index-item' onClick={props.openShowModal}>
             <div className='info-and-picture'>
                 <div className='plant-picture'>
                     <img className="plant-img" src={props.ownedPlant.plant.imgUrl}/>

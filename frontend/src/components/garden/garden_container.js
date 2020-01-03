@@ -5,6 +5,12 @@ import {
     deleteOwnedPlant,
     fetchOwnedPlants
 } from '../../actions/owned_plant_actions';
+
+import {
+    openModal,
+    closeModal
+} from '../../actions/ui_actions';
+
 import { fetchAllPlants } from '../../actions/plant_actions';
 
 const mapStateToProps = ({entities, ui}) => {
@@ -29,7 +35,10 @@ const mapDispatchToProps = (dispatch) => {
         addOwnedPlant: ownedPlant => dispatch(addOwnedPlant(ownedPlant)),
         deleteOwnedPlant: ownedPlant => dispatch(deleteOwnedPlant(ownedPlant)),
         fetchOwnedPlants: (userId) => dispatch(fetchOwnedPlants(userId)),
-        fetchAllPlants: () => dispatch(fetchAllPlants())
+        fetchAllPlants: () => dispatch(fetchAllPlants()),
+        openAddModal: () => dispatch(openModal('add owned plant')),
+        openShowModal: () => dispatch(openModal('show owned plant')),
+        closeModal: () => dispatch(closeModal())
     };
 };
 

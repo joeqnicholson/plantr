@@ -10,14 +10,19 @@ class PlantIndexItem extends React.Component {
   }
 
   handleClick() {
-    const plantId = this.props.plant._id;
-    this.props.history.push(`/plants/${plantId}`);
+    if (this.props.modalType === "add owned plant") {
+      this.props.selectPlant(this.props.plant);
+      
+      //add an outline to the index item, changes its background color
+    } else {
+      const plantId = this.props.plant._id;
+      this.props.history.push(`/plants/${plantId}`);
+    }
   }
 
   render() {
     const plantId = this.props.plant._id;
     const { plant } = this.props;
-
     return (
       <article class= 'plant-hover' onClick={this.handleClick}>
       <div className='plant-index-item-contents' >

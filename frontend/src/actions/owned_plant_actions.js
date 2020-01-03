@@ -32,16 +32,17 @@ export const receiveErrors = errors => ({
 });
 
 export const addOwnedPlant = ownedPlant => dispatch => {
+    debugger
     APIUtil.addOwnedPlant(ownedPlant)
         .then(
             res => {
-                const {ownedPlant} = res.data;
+                const ownedPlant = res.data;
                 dispatch(receiveOwnedPlant(ownedPlant));
             }
         )
         .catch(
             err => {
-                dispatch(receiveErrors(err.response.data));
+                dispatch(receiveErrors(err.data));
             }
         )
 };

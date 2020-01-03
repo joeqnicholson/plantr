@@ -9,7 +9,9 @@ const ownedPlantsReducer = (oldState = [], action) => {
     let newState = Object.assign(oldState);
     switch(action.type) {
         case RECEIVE_OWNED_PLANT:
-            newState[action.ownedPlant.id] = action.ownedPlant;
+            debugger
+            newState[action.ownedPlant._id] = action.ownedPlant;
+            debugger
             return newState;
         case RECEIVE_OWNED_PLANTS:
             newState = action.ownedPlants;
