@@ -1,8 +1,17 @@
 .garden-wrapper {
     display: flex;
     background-color: var(--background-color);
+    flex-direction: column;
+    margin-top: 85px;
     justify-content: center;
     height: 100%;
+}
+
+.garden-title {
+    font-size: 60px;
+    margin: 0 auto;
+    margin-top: 80px;
+    color: rgba(40, 100, 40, 0.993);
 }
 
 .garden-body {
@@ -14,8 +23,10 @@
 }
 
 .garden-items-wrapper {
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     margin-left: 30px;
 }
@@ -34,7 +45,6 @@
 .plus {
     width: 20%;
     height: 300px;
-    /* border: 1px solid blueviolet; */
     display: flex;
     justify-content: center;
     padding: 3px;

@@ -15,16 +15,21 @@
 }
 
 .plant-show-img-wrapper {
+  margin-top: 32px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   width: 40%;
+  height: 400px;
   padding: 25px;
   margin-right: 20px;
+  border: 1px solid rgba(129, 138, 8, 0.336);;
+  border-radius: 5px;
+  background-color: rgba(146, 156, 9, 0.11);
 }
 
 .plant-show-img {
   width: auto;
-  height: 75%;
+  height: 90%;
 }
 
 .plant-show-info-wrapper {
@@ -75,10 +80,12 @@
   border: 1px solid  #2b4624;
   border-radius: 4px;
   display: inline-block;
+  background-color: rgba(144, 238, 144, 0.205);
 }
 
 .add-owned-plant-button:hover {
   border-color: rgb(76, 136, 76);
-  color: rgb(76, 136, 76);
+  color: rgb(41, 97, 41);
+  background-color: rgba(109, 196, 109, 0.623);
   
 }

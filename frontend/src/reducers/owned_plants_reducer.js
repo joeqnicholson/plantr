@@ -6,18 +6,17 @@ import {
 
 const ownedPlantsReducer = (oldState = [], action) => {
     Object.freeze(oldState);
-    let newState = Object.assign(oldState);
+    let newState = Object.assign([], oldState);
     switch(action.type) {
         case RECEIVE_OWNED_PLANT:
-            debugger
-            newState[action.ownedPlant._id] = action.ownedPlant;
-            debugger
-            return newState;
+            newState.push(action.ownedPlant);
+            return newState;    
         case RECEIVE_OWNED_PLANTS:
             newState = action.ownedPlants;
             return newState;
         case REMOVE_OWNED_PLANT:
-            delete newState[action.ownedPlant.id];
+            //FIX THIS LATER TO IMPLEMENT DELETE FUNCTIONALITY
+            // delete newState[action.ownedPlant.id];
             return newState;
         default:
             return oldState;

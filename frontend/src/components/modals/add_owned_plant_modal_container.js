@@ -14,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         addOwnedPlant: (plant) => {
-            debugger
             return dispatch(addOwnedPlant(plant))
         }
     };

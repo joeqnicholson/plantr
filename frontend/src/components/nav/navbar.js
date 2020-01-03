@@ -20,7 +20,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className='nav-stuff'>
-          <div className='plantr-text-logo'>plantr</div>
+          <Link to={'/'} className='plantr-text-logo'>plantr</Link>
           <Link to={'/plants'} className='nav-plants'>All Plants</Link>
           <Link to={`/garden/${this.props.currentUser.id}`} className='signup'>Garden</Link>
           <button onClick={this.logoutUser} className='signout'>Log out</button>

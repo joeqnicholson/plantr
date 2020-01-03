@@ -51,10 +51,11 @@ class Garden extends React.Component {
             return (
                 <div className="garden-wrapper">
                     {modal}
+                    <h1 className="garden-title">My Garden</h1>
                     <div className="garden-body">
                         <div className="garden-items-wrapper">
-                            {gardenIndexItems}
                             <div className="plus" onClick={this.props.openAddModal}><p>+</p></div>
+                            {gardenIndexItems}
                         </div>
                     </div>
                 </div>

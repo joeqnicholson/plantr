@@ -6,7 +6,7 @@ class AddOwnedPlantModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            plantToAdd: null,
+            ownedPlantToAdd: null,
             nickname: ""
         }
         this.addOwnedPlant = this.addOwnedPlant.bind(this);
@@ -15,22 +15,14 @@ class AddOwnedPlantModal extends React.Component {
     }
 
     selectPlant(plant) {
-        let plantToAdd = {};
-
-        //refers to modal's props here, which has userId
-        plantToAdd.userId = this.props.userId;
-
-        //plantId coming from within the plant item component
-        plantToAdd.plantId = plant._id;
-
-        //refers to modal's state
-        this.setState({ plantToAdd: plantToAdd });
+        let ownedPlantToAdd = {};
+        ownedPlantToAdd.userId = this.props.userId;
+        ownedPlantToAdd.plantId = plant._id;
+        this.setState({ ownedPlantToAdd: ownedPlantToAdd });
     }
 
-    //something about this doesn't work
     addOwnedPlant() {
         let ownedPlantToAdd = this.state.ownedPlantToAdd;
-        debugger
         ownedPlantToAdd.nickname = this.state.nickname;
         this.props.addOwnedPlant(ownedPlantToAdd);
         this.props.ownProps.closeModal();

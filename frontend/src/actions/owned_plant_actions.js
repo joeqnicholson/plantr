@@ -32,7 +32,6 @@ export const receiveErrors = errors => ({
 });
 
 export const addOwnedPlant = ownedPlant => dispatch => {
-    debugger
     APIUtil.addOwnedPlant(ownedPlant)
         .then(
             res => {

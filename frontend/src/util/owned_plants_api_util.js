@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const addOwnedPlant = ownedPlant => {
-    debugger
     return axios.post(`/api/ownedPlants/${ownedPlant.userId}`, ownedPlant);
 };
 
