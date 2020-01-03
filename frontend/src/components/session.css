@@ -89,6 +89,11 @@
     padding-bottom: 30px;
     font-size: 24px;
 }
+
+.session-title:hover {
+    cursor: default;
+}
+
 button:hover{
     cursor: pointer;
 }
