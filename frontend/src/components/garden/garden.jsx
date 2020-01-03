@@ -33,14 +33,13 @@ class Garden extends React.Component {
         } else {
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
-                    <div onClick={e => e.stopPropagation()}>
+                    <div className='plant-index-item' onClick={e => e.stopPropagation()}>
                         <div onClick={() => this.selectOwnedPlant(ownedPlant)}>
                             <GardenIndexItem key={ownedPlant.id} ownedPlant={ownedPlant} openShowModal={this.props.openShowModal}/>
                         </div>
                     </div>
                 );
             });
-
             let modal;
             switch(this.props.modal) {
                 case 'add owned plant':
@@ -53,16 +52,17 @@ class Garden extends React.Component {
                     modal = null;
                     break;
             }
-
             return (
-                <div className="garden-wrapper">
+                <div className="plant-wrapper">
                     {modal}
-                    <h1 className="garden-title">My Garden</h1>
-                    <div className="garden-body">
-                        <div className="garden-items-wrapper">
-                            <div className="plus" onClick={this.props.openAddModal}><p>+</p></div>
+                    {/* <h1 className="garden-title">My Garden</h1> */}
+                    <div className="middle-plant-wrapper">
+                            <div className="plant-index-item" onClick={this.props.openAddModal}>
+                                <div className='plant-index-item-plus'>
+                                    +
+                                </div>
+                            </div>
                             {gardenIndexItems}
-                        </div>
                     </div>
                 </div>
             );

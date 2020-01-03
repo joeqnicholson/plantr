@@ -26,7 +26,7 @@ class NavBar extends React.Component {
           <button onClick={this.logoutUser} className='signout'>Log out</button>
         </div>
       )
-    } else {
+    }else{
       return (
         <div className='nav-stuff'>
           <div className='plantr-text-logo'><Link className='plantr-text-logo'to={'/'}>plantr</Link>

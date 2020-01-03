@@ -44,14 +44,12 @@
 
 .plus {
     width: 20%;
+    min-width: 250px;
     height: 300px;
-    display: flex;
-    justify-content: center;
-    padding: 3px;
     margin: 26px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0.6rem 0px;
-    background-color: rgba(107, 189, 107, 0.411);
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0.3rem 0px;
+    background-color: var(--item-background-color);
 }
 
 .garden-wrapper .plant-index-item, .plus {
