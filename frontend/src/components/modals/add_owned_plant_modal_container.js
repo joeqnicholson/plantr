@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
         selectedPlantId: ownProps.selectedPlantId,
         plants: state.entities.plants,
         modalType: state.ui.modal,
-        userId: state.session.user.id
+        userId: state.session.user.id,
+        username: state.session.user.username
     };
 }
 
