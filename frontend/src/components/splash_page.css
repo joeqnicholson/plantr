@@ -92,6 +92,11 @@ body,html{
     margin-left: 20px;
 }
 
+.nav-plants:hover {
+    color: rgb(76, 136, 76);
+    cursor: pointer; 
+}
+
 .signup:hover {
     color: rgb(76, 136, 76);
 }
@@ -151,6 +156,12 @@ body,html{
     text-decoration: none;
     margin-left: 100px;
 }
+
+.plantr-text-logo:hover {
+    color: rgb(76, 136, 76);
+    cursor: pointer;
+}
+
 .plantr-logo{
 	opacity: 1;
 	animation-name: fadeInOpacity;

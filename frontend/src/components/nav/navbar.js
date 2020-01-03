@@ -23,7 +23,7 @@ class NavBar extends React.Component {
           <div className='plantr-text-logo'>plantr</div>
           <Link to={'/plants'} className='nav-plants'>All Plants</Link>
           <Link to={`/garden/${this.props.currentUser.id}`} className='signup'>Garden</Link>
-          <button onClick={this.logoutUser} className='signout'>logout</button>
+          <button onClick={this.logoutUser} className='signout'>Log out</button>
         </div>
       )
     } else {
@@ -32,8 +32,8 @@ class NavBar extends React.Component {
           <div className='plantr-text-logo'><Link className='plantr-text-logo'to={'/'}>plantr</Link>
 </div>
           <div className='nav-prompts'>
-            <Link className='signup'to={'/signup'}>Signup</Link>
-            <Link className='signup'to={'/login'}>Login</Link>
+            <Link className='signup'to={'/signup'}>Sign Up</Link>
+            <Link className='signup'to={'/login'}>Log In</Link>
           </div>
         </div>
       )
