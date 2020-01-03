@@ -46,7 +46,7 @@ class PlantIndexItem extends React.Component {
     const { plant } = this.props;
     if(this.state.selected) {
       return (
-        <article class='plant-item-hover-selected' ref={this.itemParent} tabIndex='0'>
+        <article className='plant-item-hover-selected' ref={this.itemParent} tabIndex='0'>
           <div className='plant-index-item-contents' onClick={this.handleFocus} onBlur={this.handleChildEvent(this.itemParent, this.handleBlur)}>
             <div className='img-wrapper'>
               <img className='plant-thumb' src={plant.imgUrl} height="200" />
@@ -60,7 +60,7 @@ class PlantIndexItem extends React.Component {
       )
     } else {
       return (
-        <article class='plant-item-hover' ref={this.itemParent} tabIndex='0'>
+        <article className='plant-item-hover' ref={this.itemParent} tabIndex='0'>
           <div className='plant-index-item-contents' onClick={this.handleFocus} onBlur={this.handleChildEvent(this.itemParent, this.handleBlur)}>
               <div className='img-wrapper'>
                 <img className='plant-thumb' src={plant.imgUrl} height="200" />
