@@ -39,7 +39,7 @@ router.post("/", (req, res) => {
       sg.API(request, function (error, response) {
         console.log(response.statusCode);
         console.log(response.body);
-        // console.log(response.headers);
+        console.log(response.headers);
       });
     
       // let rule = new schedule.RecurrenceRule();
@@ -66,11 +66,10 @@ router.post("/", (req, res) => {
         // sg.API(request, function (error, response) {
         //   console.log(response.statusCode);
         //   console.log(response.body);
-        //   // console.log(response.headers);
+        //   console.log(response.headers);
         // });
       });
     })
-
 
   res.json({ msg: "This is the notifications route" });
 })
