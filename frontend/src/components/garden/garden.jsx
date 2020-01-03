@@ -8,6 +8,9 @@ import {withRouter} from 'react-router-dom';
 class Garden extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            selectedOwnedPlant: null
+        }
     }
 
     componentDidMount() {
@@ -20,10 +23,9 @@ class Garden extends React.Component {
         this.props.fetchAllPlants();
     }
 
-    // componentDidUpdate() {
-    //     this.props.fetchOwnedPlants(this.props.match.params.userId);
-    //     this.props.fetchAllPlants();
-    // }
+    selectOwnedPlant(ownedPlant) {
+        this.setState({selectedOwnedPlant: ownedPlant})
+    }
 
     render() {
         if(this.props.ownedPlants.length === 0) {
@@ -31,7 +33,11 @@ class Garden extends React.Component {
         } else {
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
-                    <GardenIndexItem key={ownedPlant.id} ownedPlant={ownedPlant} openShowModal={this.props.openShowModal}/>
+                    <div onClick={e => e.stopPropagation()}>
+                        <div onClick={() => this.selectOwnedPlant(ownedPlant)}>
+                            <GardenIndexItem key={ownedPlant.id} ownedPlant={ownedPlant} openShowModal={this.props.openShowModal}/>
+                        </div>
+                    </div>
                 );
             });
 
@@ -41,7 +47,7 @@ class Garden extends React.Component {
                     modal = <AddOwnedPlantModalContainer closeModal={this.props.closeModal} modalType={this.props.modal} />;
                     break;
                 case 'show owned plant':
-                    modal = <ShowOwnedPlantModalContainer closeModal={this.props.closeModal} />;
+                    modal = <ShowOwnedPlantModalContainer closeModal={this.props.closeModal} modalType={this.props.modal} ownedPlant={this.state.selectedOwnedPlant}/>;
                     break;
                 default:
                     modal = null;

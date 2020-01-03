@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import PlantShow from './plant_show';
 import { fetchPlant } from '../../actions/plant_actions';
+import {openModal, closeModal} from '../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const plant = state.entities.plants.find( plant => {
@@ -8,13 +9,16 @@ const mapStateToProps = (state, ownProps) => {
   });
 
   return {
-    plant
+    plant,
+    modal: state.ui.modal
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchPlant: (plantId) => dispatch(fetchPlant(plantId))
+    fetchPlant: (plantId) => dispatch(fetchPlant(plantId)),
+    openModal: () => dispatch(openModal('add owned plant')),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

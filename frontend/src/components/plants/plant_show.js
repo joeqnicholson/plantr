@@ -1,5 +1,6 @@
 import React from 'react';
 import "../plant_show.css";
+import AddOwnedPlantModalContainer from '../modals/add_owned_plant_modal_container';
 
 class PlantShow extends React.Component {
   constructor(props) {
@@ -13,17 +14,17 @@ class PlantShow extends React.Component {
     }
   }
 
-  handleSubmit (e) {
+  handleSubmit(e) {
     e.preventDefault();
   }
 
   render() {
-
     const { plant } = this.props;
 
     if (plant) {
       return (
         <div className="plant-show-wrapper-wrapper">
+          {this.props.modal === 'add owned plant' && <AddOwnedPlantModalContainer selectedPlantId={plant._id} closeModal={this.props.closeModal}/>}
           <div className="plant-show-wrapper">
             <div className="plant-show-img-wrapper">
               <img 
@@ -42,7 +43,7 @@ class PlantShow extends React.Component {
               <div className="plant-show-info-item-wrappers">
                 <h1 className="plant-show-h1 frequency">Watering frequency: ~{plant.frequency} days</h1>
               </div>
-              <button className="add-owned-plant-button" onClick={this.handleSubmit}>Plant {plant.name} in my garden!</button>
+              <button className="add-owned-plant-button" onClick={this.props.openModal}>Plant {plant.name} in my garden!</button>
               <div className="plant-show-info-item-wrappers">
                 <h1 className="plant-show-h1 water">Watering Needs:</h1>
                 <p className="plant-show-p">{plant.water}</p>
