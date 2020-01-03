@@ -14,8 +14,7 @@
   position: relative;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-wrap: wrap;
   top: 12%;
   color: white;
   background: rgb(117, 175, 117);
@@ -43,6 +42,10 @@
 
 .modal-add-wrapper {
   margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .modal-add-items {
@@ -50,21 +53,57 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  border: 1px solid teal;
 }
 
-.add-modal-child .plant-index-item {
-  margin: 12px 10px 20px 10px;
-  width: 11%;
-  height: 150px;
+
+.plant-modal-index-item{
+    width: 10%;
+    min-width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0.3rem 0px;
+    background-color: var(--item-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.plant-modal-name-and-button{
+  border: 1px solid teal;
+  display: flex;
+  flex-direction: column;
 }
 
-.add-modal-child .plant-index-item:focus {
-  outline: darkgreen;
+.plant-modal-item-hover{
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+
+.plant-modal-index-item-contents{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 .add-modal-child img {
   width: 40px;
   height: 100%;
+}
+
+.plant-modal-name{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-weight: bold;
+}
+
+.plant-modal-latin-name{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #5a5a5a;
+  font-style: italic;
 }
 
 .add-plant-btn {
@@ -80,9 +119,6 @@
     border: 1px solid  #2b4624;
     border-radius: 4px;
     display: inline-block;
-    position: absolute;
-    top: 420px;
-    left: 800px;
 }
 
 .add-plant-btn:hover {
