@@ -44,10 +44,11 @@ router.post("/", (req, res) => {
     
       // let rule = new schedule.RecurrenceRule();
       // rule.second = new schedule.Range(0, 59, 10);
-      let rule = `*/${req.body.frequency} * * * *`;
+      let rule = `* * */${req.body.frequency} * *`;
     
       let job = schedule.scheduleJob(req.body.name, rule, function () {
         console.log(req.body);
+        console.log("TEST");
       
         const alertSubject = `Time to water your ${fullPlantName}!`;
         const alertContent = new helper.Content('text/html',
@@ -57,17 +58,17 @@ router.post("/", (req, res) => {
     
         // BELOW THIS THE EMAIL IS DISPATCHED
     
-        // request = sg.emptyRequest({
-        //   method: 'POST',
-        //   path: '/v3/mail/send',
-        //   body: alertMail.toJSON(),
-        // });
+        request = sg.emptyRequest({
+          method: 'POST',
+          path: '/v3/mail/send',
+          body: alertMail.toJSON(),
+        });
     
-        // sg.API(request, function (error, response) {
-        //   console.log(response.statusCode);
-        //   console.log(response.body);
-        //   console.log(response.headers);
-        // });
+        sg.API(request, function (error, response) {
+          console.log(response.statusCode);
+          console.log(response.body);
+          console.log(response.headers);
+        });
       });
     })
 
@@ -76,6 +77,7 @@ router.post("/", (req, res) => {
 
 router.post("/cancel", (req, res) => {
   console.log(schedule.scheduledJobs);
+  console.log(req.body.name);
   let job = schedule.scheduledJobs[req.body.name];
 
   job.cancel();
