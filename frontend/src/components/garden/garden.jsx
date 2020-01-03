@@ -31,7 +31,7 @@ class Garden extends React.Component {
             const gardenIndexItems = this.props.ownedPlants.map((ownedPlant) => {
                 return (
                     <div className='plant-index-item' onClick={e => e.stopPropagation()}>
-                        <div onClick={() => this.selectOwnedPlant(ownedPlant)}>
+                        <div onClick={() => this.selectOwnedPlant(ownedPlant)} >
                             <GardenIndexItem key={ownedPlant.id} ownedPlant={ownedPlant} openShowModal={this.props.openShowModal}/>
                         </div>
                     </div>
