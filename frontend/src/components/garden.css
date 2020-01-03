@@ -1,5 +1,6 @@
 .garden-wrapper {
     display: flex;
+    background-color: var(--background-color);
     justify-content: center;
     height: 100%;
 }

@@ -20,12 +20,22 @@ time, mark, audio, video {
     vertical-align: baseline;
     font-family: Arial, Helvetica, sans-serif;
 }
+body{
+    --background-color: rgb(255, 255, 255);
+    --item-background-color: rgb(255, 255, 255);
+    --text-color: rgb(30, 36, 31);
+}
+
 .plantr{
     height: 100%;
+    display: flex;
+    flex-direction: column; 
 }
+
 body,html{
     height: 100%;
 }
+
 #root{
     height: 100%;
 }
@@ -66,6 +76,20 @@ body,html{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: transparent; 
+}
+
+.nav-plants{
+    color: #2b4624;
+    padding: 10px 10px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: transparent; 
+    margin-left: 20px;
 }
 
 .signup:hover {
@@ -127,8 +151,6 @@ body,html{
     text-decoration: none;
     margin-left: 100px;
 }
-
-
 .plantr-logo{
 	opacity: 1;
 	animation-name: fadeInOpacity;
@@ -136,11 +158,13 @@ body,html{
 	animation-timing-function: ease-in;
 	animation-duration: 2s;
 }
-
 .plantr{
 	opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 1.75s;
+    animation-timing-function: ease-in;
+    animation-duration: 1.75s;
 }
+
+
+
