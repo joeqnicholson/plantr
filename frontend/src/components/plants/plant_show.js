@@ -1,6 +1,6 @@
 import React from 'react';
 import "../plant_show.css";
-import AddOwnedPlantModalContainer from '../modals/add_owned_plant_modal_container';
+import IndividualAddPlantModalContainer from '../modals/individual_add_plant_modal_container';
 
 class PlantShow extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class PlantShow extends React.Component {
     if (plant) {
       return (
         <div className="plant-show-wrapper-wrapper">
-          {this.props.modal === 'add owned plant' && <AddOwnedPlantModalContainer selectedPlantId={plant._id} closeModal={this.props.closeModal}/>}
+          {this.props.modal === 'add owned plant' && <IndividualAddPlantModalContainer plant={plant} closeModal={this.props.closeModal}/>}
           <div className="plant-show-wrapper">
             <div className="plant-show-img-wrapper">
               <img 
