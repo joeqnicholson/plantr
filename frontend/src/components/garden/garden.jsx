@@ -64,6 +64,7 @@ class Garden extends React.Component {
             
             return (
                 <div className="plant-wrapper">
+                    {modal}
                     {/* <h1 className="garden-title">My Garden</h1> */}
                     <div className="middle-plant-wrapper">
                             <div className="plus-index-item" onClick={this.props.openAddModal}>
