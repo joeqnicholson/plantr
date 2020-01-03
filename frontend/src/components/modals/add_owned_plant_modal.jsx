@@ -23,7 +23,6 @@ class AddOwnedPlantModal extends React.Component {
 
     setAlert() {
         const plant = this.state.ownedPlantToAdd;
-        debugger
         const frequency = plant.frequency;
         const plantName = plant.plantName;
         const water = plant.water;
