@@ -1,5 +1,4 @@
 .garden-wrapper {
-    background-color: rgba(107, 189, 107, 0.205);
     display: flex;
     justify-content: center;
     height: 100%;
@@ -31,11 +30,42 @@
     width: 75px;
 }
 
-.garden-wrapper .plant-index-item {
+.plus {
+    width: 20%;
+    height: 300px;
+    /* border: 1px solid blueviolet; */
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    margin: 26px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0.6rem 0px;
+    background-color: rgba(107, 189, 107, 0.411);
+}
+
+.garden-wrapper .plant-index-item, .plus {
     height: 150px;
     width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgba(40, 100, 40, 0.644);
+    background: rgba(92, 201, 92, 0.685);
+}
+
+.garden-wrapper .plant-index-item:hover {
+    background: rgba(85, 167, 85, 0.699);
+    color: rgb(55, 100, 55);
+    cursor: pointer; 
+}
+
+.plus p {
+    font-size: 70px;
+}
+
+.plus:hover {
+    background: rgba(85, 167, 85, 0.699);
+    color: rgb(55, 100, 55);
+    cursor: pointer;
 }
 

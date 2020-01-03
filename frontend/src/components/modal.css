@@ -1,0 +1,127 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  animation-name: modal-background-fade-in;
+  animation-duration: 0.25s;
+}
+
+.add-modal-child {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  top: 12%;
+  color: white;
+  background: rgb(117, 175, 117);
+  animation-name: modal-child-fade-in;
+  animation-duration: 0.5s;
+  height: 500px;
+  width: 1200px;
+  border-radius: 5px;
+}
+
+.show-modal-child {
+   position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  top: 15%;
+  color: white;
+  background: rgb(117, 175, 117);
+  animation-name: modal-child-fade-in;
+  animation-duration: 0.5s;
+  height: 400px;
+  width: 500px; 
+  border-radius: 5px;
+}
+
+.modal-add-wrapper {
+  margin-top: 20px;
+}
+
+.modal-add-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.add-modal-child .plant-index-item {
+  margin: 12px 10px 20px 10px;
+  width: 11%;
+  height: 150px;
+}
+
+.add-modal-child img {
+  width: 40px;
+  height: 100%;
+}
+
+.add-plant-btn {
+    color: #2b4624;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid  #2b4624;
+    border-radius: 4px;
+    display: inline-block;
+    position: absolute;
+    top: 420px;
+    left: 800px;
+}
+
+.add-plant-btn:hover {
+    border-color: rgb(13, 36, 8);
+    color: rgb(13, 36, 8);
+    background-color: rgb(76, 136, 76);
+    cursor: pointer;
+}
+
+.x {
+  position: absolute;
+  font-size: 40px;
+  transform: rotate(45deg);
+  left: 1160px;
+  top: 0px;
+}
+
+.x:hover {
+  color: rgb(204, 204, 204);
+  cursor: pointer;
+}
+
+.nickname-input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+@keyframes modal-child-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-background-fade-in {
+  from {
+    background: transparent;
+  }
+  to {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}

@@ -41,7 +41,6 @@ router.post("/:userId", passport.authenticate('jwt', { session: false }),
     }
 
     newOwnedPlant = new OwnedPlant(newOwnedPlant)
-
     newOwnedPlant.save().then(ownedPlant => res.json(ownedPlant));
   }
 )
