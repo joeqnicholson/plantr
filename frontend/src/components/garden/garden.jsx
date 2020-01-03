@@ -14,13 +14,13 @@ class Garden extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchOwnedPlants(this.props.match.params.userId);
         this.props.fetchAllPlants();
+        this.props.fetchOwnedPlants(this.props.match.params.userId);
     }
 
     componentWillUnmount() {
-        this.props.fetchOwnedPlants(this.props.match.params.userId);
         this.props.fetchAllPlants();
+        this.props.fetchOwnedPlants(this.props.match.params.userId);
     }
 
     selectOwnedPlant(ownedPlant) {
