@@ -35,12 +35,13 @@ class AddOwnedPlantModal extends React.Component {
     }
 
     selectPlant(plant) {
+        debugger
         let ownedPlantToAdd = {};
         ownedPlantToAdd.userId = this.props.userId;
         ownedPlantToAdd.plantId = plant._id;
         ownedPlantToAdd.frequency = plant.frequency;
         ownedPlantToAdd.water = plant.water;
-        ownedPlantToAdd.plantName = plant.plantName;
+        ownedPlantToAdd.plantName = plant.name;
         this.setState({ ownedPlantToAdd: ownedPlantToAdd });
     }
 

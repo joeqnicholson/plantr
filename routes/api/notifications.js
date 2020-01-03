@@ -19,7 +19,7 @@ router.post("/", (req, res) => {
   };
   const from_email = new helper.Email('plantr.notification@gmail.com');
   const to_email = new helper.Email('kennylozeau@hotmail.com');
-  const initSubject = `You've setup a watering notification for your ${req.body.plantName}!`;
+  const initSubject = `You've set up a watering notification for your ${req.body.plantName}!`;
   const initContent = new helper.Content('text/html',
     `<center><div width=400>
       Hi ${req.body.username}, you\'ll being reminded to water your ${req.body.plantName} in ${req.body.frequency} days!
