@@ -118,9 +118,8 @@ body,html{
 }
 
 .signout:hover {
-    border-color: rgb(76, 136, 76);
-    color: rgb(76, 136, 76);
-
+    background: #dbb62148;
+    color: #3b6132;
 }
 
 .signout{

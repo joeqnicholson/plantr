@@ -3,13 +3,14 @@ import '../modal.css';
 import PlantIndexItem from '../plants/plant_index_item';
 import * as NotificationApiUtils from '../../util/notification_api_util';
 
+import {withRouter} from 'react-router-dom';
 
 class AddOwnedPlantModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             ownedPlantToAdd: null,
-            nickname: ""
+            nickname: "",
         }
         this.addOwnedPlant = this.addOwnedPlant.bind(this);
         this.setNickname = this.setNickname.bind(this);
@@ -17,9 +18,11 @@ class AddOwnedPlantModal extends React.Component {
 
         this.setAlert = this.setAlert.bind(this);
         this.cancelAlert = this.cancelAlert.bind(this);
+        this.deselectPlant = this.deselectPlant.bind(this);
     }
 
     setAlert() {
+        debugger
         const plant = this.state.ownedPlantToAdd;
         const frequency = plant.frequency;
         const plantName = plant.name;
@@ -35,7 +38,6 @@ class AddOwnedPlantModal extends React.Component {
     }
 
     selectPlant(plant) {
-        debugger
         let ownedPlantToAdd = {};
         ownedPlantToAdd.userId = this.props.userId;
         ownedPlantToAdd.plantId = plant._id;
@@ -45,12 +47,17 @@ class AddOwnedPlantModal extends React.Component {
         this.setState({ ownedPlantToAdd: ownedPlantToAdd });
     }
 
+    deselectPlant() {
+        this.setState({ ownedPlantToAdd: null });
+    }
+
     addOwnedPlant() {
         let ownedPlantToAdd = this.state.ownedPlantToAdd;
         ownedPlantToAdd.nickname = this.state.nickname;
         this.props.addOwnedPlant(ownedPlantToAdd);
         this.setAlert();
         this.props.ownProps.closeModal();
+        this.props.history.push(`/garden/${this.props.userId}`);
     }
 
     setNickname(e) {
@@ -62,10 +69,19 @@ class AddOwnedPlantModal extends React.Component {
     }
 
     render() {
+        let selected;
         const plantList = this.props.plants.map(plant => {
+            selected = (plant._id === this.props.selectedPlantId);
             return (
                 <div className='plant-index-item'>
-                    <PlantIndexItem key={plant._id} plant={plant} modalType={this.props.modalType} selectPlant={this.selectPlant}/>
+                    <PlantIndexItem
+                        key={plant._id}
+                        plant={plant}
+                        modalType={this.props.modalType}
+                        selectPlant={this.selectPlant}
+                        deselectPlant={this.deselectPlant}
+                        selected={selected}
+                    />
                 </div>
             )
         });
@@ -88,4 +104,4 @@ class AddOwnedPlantModal extends React.Component {
     }
 }
 
-export default AddOwnedPlantModal;
+export default withRouter(AddOwnedPlantModal);
