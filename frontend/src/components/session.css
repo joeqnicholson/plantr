@@ -64,7 +64,7 @@
     display: inline-block;
     box-sizing: border-box;
     border-radius: 4px;
-    background-color: rgb(27, 185, 61);
+    background-color: rgba(27, 185, 61, 0.692);
     color: rgb(255, 255, 255);
     height: 55px;
     font-family: Arial, Helvetica, sans-serif;
@@ -74,11 +74,11 @@
 
 .input-session-submit:hover {
     cursor: pointer;
-    background: rgb(21, 151, 49);
+    background: rgba(21, 151, 49, 0.836);
 }
 
 .input-session-submit:active {
-    background: rgb(17, 124, 40);
+    background: rgba(17, 124, 40, 0.795);
 }
 
 .session-title{

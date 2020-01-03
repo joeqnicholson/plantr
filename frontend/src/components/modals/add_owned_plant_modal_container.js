@@ -5,6 +5,7 @@ import {addOwnedPlant} from '../../actions/owned_plant_actions';
 const mapStateToProps = (state, ownProps) => {
     return {
         ownProps,
+        selectedPlantId: ownProps.selectedPlantId,
         plants: state.entities.plants,
         modalType: state.ui.modal,
         userId: state.session.user.id

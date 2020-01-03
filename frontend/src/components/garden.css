@@ -1,14 +1,14 @@
 .garden-wrapper {
     display: flex;
-    background-color: var(--background-color);
     flex-direction: column;
+    align-items: space-evenly;
     margin-top: 85px;
     justify-content: center;
     height: 100%;
 }
 
 .garden-title {
-    font-size: 60px;
+    font-size: 50px;
     margin: 0 auto;
     margin-top: 80px;
     color: rgba(40, 100, 40, 0.993);
@@ -23,7 +23,7 @@
 }
 
 .garden-items-wrapper {
-    margin-top: 15px;
+    margin-top: 200px;
     display: flex;
     flex-direction: row;
     justify-content: center;

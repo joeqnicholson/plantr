@@ -58,6 +58,10 @@
   height: 150px;
 }
 
+.add-modal-child .plant-index-item:focus {
+  outline: darkgreen;
+}
+
 .add-modal-child img {
   width: 40px;
   height: 100%;
@@ -101,11 +105,29 @@
   cursor: pointer;
 }
 
+.plant-item-hover-selected {
+  outline: darkgreen;
+  border: 5px solid rgb(6, 139, 6);
+  border-radius: 3px;
+  outline: none;
+}
+
 .nickname-input {
   width: 250px;
   height: 30px;
   border-radius: 5px;
   font-size: 14px;
+}
+
+.nickname, .frequency {
+  color: black;
+}
+
+.show-modal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 @keyframes modal-child-fade-in {

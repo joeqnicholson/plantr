@@ -3,7 +3,7 @@
     height: fit-content;
     display: flex;
     justify-content: center;
-    background-color: var(--background-color);
+    background-color: rgba(131, 182, 131, 0.11);
 }
 
 .middle-plant-wrapper{
