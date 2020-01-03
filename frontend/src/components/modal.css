@@ -92,6 +92,32 @@
     cursor: pointer;
 }
 
+.individual-add-plant-btn {
+    color: rgb(13, 36, 8);
+    background-color: rgb(51, 90, 51);
+    border: 1px solid  rgb(13, 36, 8);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 4px;
+    display: inline-block;
+    position: absolute;
+    top: 350px;
+    left: 190px;
+}
+
+.individual-add-plant-btn:hover {
+    border-color: rgb(13, 36, 8);
+    color: rgb(13, 36, 8);
+    background-color: rgb(78, 141, 78);
+    cursor: pointer;
+}
+
 .x {
   position: absolute;
   font-size: 40px;
@@ -112,6 +138,18 @@
   outline: none;
 }
 
+.individual-nickname-label {
+  display: flex;
+  flex-direction: row;
+}
+
+.individual-nickname {
+  margin-top: 10px;
+  margin-right: 10px;
+  color: black;
+  font-size: 16px;
+}
+
 .nickname-input {
   width: 250px;
   height: 30px;
@@ -119,7 +157,15 @@
   font-size: 14px;
 }
 
-.nickname, .frequency {
+.individual-nickname-input {
+  width: 230px;
+  padding-left: 5px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.nickname, .frequency, .individual-nickname-input {
   color: black;
 }
 
