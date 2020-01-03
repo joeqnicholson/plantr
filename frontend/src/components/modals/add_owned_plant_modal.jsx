@@ -22,15 +22,16 @@ class AddOwnedPlantModal extends React.Component {
     }
 
     setAlert() {
-        debugger
         const plant = this.state.ownedPlantToAdd;
+        debugger
         const frequency = plant.frequency;
-        const plantName = plant.name;
+        const plantName = plant.plantName;
         const water = plant.water;
         const username = this.props.username;
         const name = plant.id;
         const nickname = this.state.nickname;
-        NotificationApiUtils.createNotification({ name, frequency, plantName, nickname, username, water });
+        const userId = plant.userId;
+        NotificationApiUtils.createNotification({ name, frequency, plantName, nickname, username, userId, water });
     }
 
     cancelAlert(name) {

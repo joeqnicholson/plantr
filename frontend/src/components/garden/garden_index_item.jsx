@@ -2,7 +2,6 @@ import React from 'react';
 import '../garden.css';
 
 const GardenIndexItem = props => {
-    debugger
     return(
         <div className='plant-index-item' onClick={props.openShowModal}>
             <div className='info-and-picture'>
