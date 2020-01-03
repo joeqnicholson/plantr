@@ -19,12 +19,15 @@ class AddOwnedPlantModal extends React.Component {
         this.cancelAlert = this.cancelAlert.bind(this);
     }
 
-    setAlert(name) {
-        const frequency = 1;
-        const plantName = "Snake";
-        const username = "Kenny";
-        const water = 100;
-        NotificationApiUtils.createNotification({ name, frequency, plantName, username, water });
+    setAlert() {
+        const plant = this.state.ownedPlantToAdd;
+        const frequency = plant.frequency;
+        const plantName = plant.name;
+        const water = plant.water;
+        const username = this.props.username;
+        const name = plant.id;
+        const nickname = this.state.nickname;
+        NotificationApiUtils.createNotification({ name, frequency, plantName, nickname, username, water });
     }
 
     cancelAlert(name) {
@@ -35,6 +38,9 @@ class AddOwnedPlantModal extends React.Component {
         let ownedPlantToAdd = {};
         ownedPlantToAdd.userId = this.props.userId;
         ownedPlantToAdd.plantId = plant._id;
+        ownedPlantToAdd.frequency = plant.frequency;
+        ownedPlantToAdd.water = plant.water;
+        ownedPlantToAdd.plantName = plant.plantName;
         this.setState({ ownedPlantToAdd: ownedPlantToAdd });
     }
 
@@ -42,6 +48,7 @@ class AddOwnedPlantModal extends React.Component {
         let ownedPlantToAdd = this.state.ownedPlantToAdd;
         ownedPlantToAdd.nickname = this.state.nickname;
         this.props.addOwnedPlant(ownedPlantToAdd);
+        this.setAlert();
         this.props.ownProps.closeModal();
     }
 

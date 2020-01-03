@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
         ownProps,
         plants: state.entities.plants,
         modalType: state.ui.modal,
-        userId: state.session.user.id
+        userId: state.session.user.id,
+        username: state.session.user.username
     };
 }
 
