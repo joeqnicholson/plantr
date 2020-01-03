@@ -1,5 +1,8 @@
 import React from 'react';
 import '../modal.css';
+import PlantIndexItem from '../plants/plant_index_item';
+import * as NotificationApiUtils from '../../util/notification_api_util';
+
 import PlantModalIndexItem from './plant_modal_index_item';
 import {withRouter} from 'react-router-dom';
 
@@ -13,13 +16,35 @@ class AddOwnedPlantModal extends React.Component {
         this.addOwnedPlant = this.addOwnedPlant.bind(this);
         this.setNickname = this.setNickname.bind(this);
         this.selectPlant = this.selectPlant.bind(this);
+
+        this.setAlert = this.setAlert.bind(this);
+        this.cancelAlert = this.cancelAlert.bind(this);
         this.deselectPlant = this.deselectPlant.bind(this);
+    }
+
+    setAlert() {
+        const plant = this.state.ownedPlantToAdd;
+        const frequency = plant.frequency;
+        const plantName = plant.plantName;
+        const water = plant.water;
+        const username = this.props.username;
+        const name = plant.id;
+        const nickname = this.state.nickname;
+        const userId = plant.userId;
+        NotificationApiUtils.createNotification({ name, frequency, plantName, nickname, username, userId, water });
+    }
+
+    cancelAlert(name) {
+        NotificationApiUtils.cancelNotification({ name });
     }
 
     selectPlant(plant) {
         let ownedPlantToAdd = {};
         ownedPlantToAdd.userId = this.props.userId;
         ownedPlantToAdd.plantId = plant._id;
+        ownedPlantToAdd.frequency = plant.frequency;
+        ownedPlantToAdd.water = plant.water;
+        ownedPlantToAdd.plantName = plant.name;
         this.setState({ ownedPlantToAdd: ownedPlantToAdd });
     }
 
@@ -31,6 +56,7 @@ class AddOwnedPlantModal extends React.Component {
         let ownedPlantToAdd = this.state.ownedPlantToAdd;
         ownedPlantToAdd.nickname = this.state.nickname;
         this.props.addOwnedPlant(ownedPlantToAdd);
+        this.setAlert();
         this.props.ownProps.closeModal();
         this.props.history.push(`/garden/${this.props.userId}`);
     }
