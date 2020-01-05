@@ -4,6 +4,7 @@
 
 Collect houseplants you care for in your 'garden'. Each plant has helpful tips and care instructions.
 
+![Screenshot](https://raw.githubusercontent.com/joeqnicholson/plantr/master/frontend/src/components/plantr_screenshot.png)
 
 ___
 ### _Table of Contents_
