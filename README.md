@@ -1,8 +1,6 @@
 # plantr
 
-~~plantr_logo~~
-
-~~plantrscreenshot collection~~
+![Logo](https://raw.githubusercontent.com/joeqnicholson/plantr/master/frontend/src/components/plant.png)
 
 Collect houseplants you care for in your 'garden'. Each plant has helpful tips and care instructions.
 
