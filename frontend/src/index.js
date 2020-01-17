@@ -7,7 +7,7 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 // FOR TESTING PURPOSES ONLY
-import { fetchAllPlants, fetchPlant } from './actions/plant_actions';
+// import { fetchAllPlants, fetchPlant } from './actions/plant_actions';
 // import { fetchAllPlants } from './util/plant_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // FOR TESTING PURPOSES ONLY
-  window.dispatch = store.dispatch;
+  // window.dispatch = store.dispatch;
   // window.fetchPlant = fetchPlant;
-  window.fetchAllPlants = fetchAllPlants;
+  // window.fetchAllPlants = fetchAllPlants;
   // -------------------------
 
   const root = document.getElementById('root');
