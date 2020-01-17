@@ -10,13 +10,11 @@ class ShowOwnedPlantModal extends React.Component {
     }
 
     cancelAlert(name) {
-        debugger
         NotificationApiUtils.cancelNotification({ name });
     }
 
     render() {
         const {ownedPlant, plant} = this.props;
-        debugger
         return (
             <div className="modal-background" onClick={this.props.ownProps.closeModal}>
                 <div className="show-modal-child" onClick={e => e.stopPropagation()}>

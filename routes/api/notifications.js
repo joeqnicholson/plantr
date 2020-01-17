@@ -79,13 +79,15 @@ router.post("/cancel", (req, res) => {
   console.log(schedule.scheduledJobs);
   console.log(req.body.name);
   let job = schedule.scheduledJobs[req.body.name];
+  let canceled = false;
 
-  job.cancel();
+  if (job) canceled = job.cancel();
 
-  console.log("canceled?")
-
-  res.json({ msg: "This is the notification cancel route" });
-
+  if (canceled) {
+    res.json({ msg: "Notifications canceled" });
+  } else {
+    res.status(422).json({ msg: "There was a problem" });
+  };
 })
 
 module.exports = router;
