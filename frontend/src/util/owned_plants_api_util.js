@@ -5,7 +5,7 @@ export const addOwnedPlant = ownedPlant => {
 };
 
 export const deleteOwnedPlant = ownedPlant => {
-    return axios.delete(`/api/ownedPlants/${ownedPlant.userId}`, ownedPlant);
+    return axios.delete(`/api/ownedPlants/${ownedPlant.userId}/${ownedPlant._id}`, ownedPlant);
 };
 
 export const fetchOwnedPlants = (userId) => {
