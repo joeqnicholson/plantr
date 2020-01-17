@@ -75,7 +75,6 @@ router.delete("/:userId/:ownedPlantId",
   passport.authenticate('jwt', { session: false }), 
   (req, res) => {
     // const target = { _id: req.params.ownedPlantId }
-    debugger
     OwnedPlant.findByIdAndDelete(req.params.ownedPlantId)
       .then(ownedPlant => {
         res.json(ownedPlant)
