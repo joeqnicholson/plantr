@@ -1,7 +1,14 @@
 import React from 'react'
+import { connect } from "react-redux";
 import {Link} from 'react-router-dom';
 import './splash_page.css'
+import { fetchAllPlants } from "../../actions/plant_actions"
+
 class SplashPage extends React.Component{
+  componentWillUnmount () {
+    this.props.fetchAllPlants();
+  }
+
     render(){
       return(
         <div className='homepage'>
@@ -17,4 +24,12 @@ class SplashPage extends React.Component{
       ) 
   }
 }
-export default SplashPage
+
+
+
+const mdp = dispatch => ({
+  fetchAllPlants: () => dispatch(fetchAllPlants())
+});
+
+
+export default connect(null, mdp)(SplashPage)

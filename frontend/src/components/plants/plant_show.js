@@ -3,10 +3,6 @@ import "../plant_show.css";
 import IndividualAddPlantModalContainer from '../modals/individual_add_plant_modal_container';
 
 class PlantShow extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     window.scrollTo(0, 0);
     if (!this.props.plant) {
@@ -29,7 +25,7 @@ class PlantShow extends React.Component {
             <div className="plant-show-img-wrapper">
               <img 
                 src={plant.imgUrl} 
-                alt={`${plant.name} image`} 
+                alt={`${plant.name}`} 
                 className="plant-show-img">
               </img>
             </div>
