@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
   }
 
@@ -38,6 +39,15 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user);
+  }
+
+  demoLogin(event) {
+    event.preventDefault();
+
+    this.props.login({
+      email: "frida@kahlo.com",
+      password: "test123"
+    })
   }
 
   // render the session errors if there are any
@@ -74,6 +84,7 @@ class LoginForm extends React.Component {
               />
               <br />
               <input class='input-session-submit'type="submit" value="Log In" />
+              <input onClick={this.demoLogin} class='input-session-submit'type="submit" value="Demo User" />
               {this.handleErrors()}
             </div>
           </form>
