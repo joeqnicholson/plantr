@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom'
 
 class PlantIndexItem extends React.Component {
   constructor(props) {
@@ -22,13 +21,12 @@ class PlantIndexItem extends React.Component {
 
 
   render() {
-    const plantId = this.props.plant._id;
     const { plant } = this.props;
     return (
       <article className='plant-item-hover' onClick={this.handleClick} tabIndex='0'>
         <div className='plant-index-item-contents' >
             <div className='img-wrapper'>
-              <img className='plant-thumb' src={plant.imgUrl} height="200" />
+              <img alt="plant thumbnail" className='plant-thumb' src={plant.imgUrl} height="200" />
             </div>
             <div className='plant-info'>
               <div className='plant-name'>{plant.name}</div>

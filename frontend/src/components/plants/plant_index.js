@@ -5,16 +5,8 @@ import PlantIndexItem from './plant_index_item';
 // import jwt_decode from 'jwt-decode';
 // import * as NotificationApiUtils from '../../util/notification_api_util';
 import '../plants.css'
-import { Link } from 'react-router-dom'
 
 class PlantIndex extends React.Component {
-  constructor(props) {
-    super(props);
-
-    // this.setAlert = this.setAlert.bind(this);
-    // this.cancelAlert = this.cancelAlert.bind(this);
-  }
-
   componentDidMount() {
     this.props.fetchAllPlants();
   }
