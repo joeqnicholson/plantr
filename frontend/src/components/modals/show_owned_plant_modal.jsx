@@ -12,6 +12,7 @@ class ShowOwnedPlantModal extends React.Component {
     cancelAlert(name) {
         NotificationApiUtils.cancelNotification({ name });
         this.props.deleteOwnedPlant(this.props.ownedPlant);
+        this.props.ownProps.closeModal();
     }
 
     render() {

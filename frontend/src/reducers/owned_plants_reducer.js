@@ -15,8 +15,11 @@ const ownedPlantsReducer = (oldState = [], action) => {
             newState = action.ownedPlants;
             return newState;
         case REMOVE_OWNED_PLANT:
-            //FIX THIS LATER TO IMPLEMENT DELETE FUNCTIONALITY
-            // delete newState[action.ownedPlant.id];
+            let index;
+            newState.forEach( (plant, idx) => {
+                if (plant._id === action.ownedPlant._id) index = idx;
+            });
+            newState = newState.slice(0, index).concat(newState.slice(index + 1));
             return newState;
         default:
             return oldState;

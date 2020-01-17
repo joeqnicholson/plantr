@@ -60,32 +60,32 @@ class SignupForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="signup-form">
               <br />
-              <div class='session-title'>Sign Up</div>
-              <input class='input-session'type="text"
+              <div className='session-title'>Sign Up</div>
+              <input className='input-session'type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
               <br />
-              <input class='input-session'type="text"
+              <input className='input-session' type="text" autoComplete="username"
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="Username"
               />
               <br />
-              <input class='input-session'type="password"
+              <input className='input-session' type="password" autoComplete="new-password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
               <br />
-              <input class='input-session'type="password"
+              <input className='input-session' type="password" autoComplete="new-password"
                 value={this.state.password2}
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               />
               <br />
-              <input class='input-session-submit'type="submit" value="Join" />
+              <input className='input-session-submit'type="submit" value="Join" />
               {this.handleErrors()}
 
             </div>

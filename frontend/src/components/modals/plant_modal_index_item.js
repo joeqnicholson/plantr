@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 class PlantModalIndexItem extends React.Component {
   constructor(props) {
@@ -42,14 +42,14 @@ class PlantModalIndexItem extends React.Component {
 
 
   render() {
-    const plantId = this.props.plant._id;
+    // const plantId = this.props.plant._id;
     const { plant } = this.props;
     if(this.state.selected) {
       return (
         <article className='plant-item-hover-selected' ref={this.itemParent} tabIndex='0'>
           <div className='plant-index-item-contents' onClick={this.handleFocus} onBlur={this.handleChildEvent(this.itemParent, this.handleBlur)}>
             <div className='img-wrapper'>
-              <img className='plant-thumb' src={plant.imgUrl} height="200" />
+              <img className='plant-thumb' alt="plant-thumb" src={plant.imgUrl} height="200" />
             </div>
             <div className='plant-info'>
               <div className='plant-name'>{plant.name}</div>
@@ -63,7 +63,7 @@ class PlantModalIndexItem extends React.Component {
         <article className='plant-item-modal-hover' ref={this.itemParent} tabIndex='0'>
           <div className='plant-modal-index-item-contents' onClick={this.handleFocus} onBlur={this.handleChildEvent(this.itemParent, this.handleBlur)}>
               <div className='modal-img-wrapper'>
-                <img className='plant-modal-thumb' src={plant.imgUrl} height="50" />
+                <img className='plant-modal-thumb' alt="plant-thumb" src={plant.imgUrl} height="50" />
               </div>
               <div className='plant-modal-info'>
                 <div className='plant-modal-name'>{plant.name}</div>

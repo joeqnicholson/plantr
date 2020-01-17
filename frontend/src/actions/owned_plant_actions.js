@@ -50,7 +50,7 @@ export const deleteOwnedPlant = ownedPlant => dispatch => {
     APIUtil.deleteOwnedPlant(ownedPlant)
         .then(
             res => {
-                const {ownedPlant} = res.data;
+                const ownedPlant = res.data;
                 dispatch(removeOwnedPlant(ownedPlant));
             }
         )

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../modal.css';
-import PlantIndexItem from '../plants/plant_index_item';
+// import PlantIndexItem from '../plants/plant_index_item';
 import * as NotificationApiUtils from '../../util/notification_api_util';
 
 import PlantModalIndexItem from './plant_modal_index_item';
