@@ -1,6 +1,5 @@
 import React from 'react';
 import '../modal.css';
-import PlantIndexItem from '../plants/plant_index_item';
 import * as NotificationApiUtils from '../../util/notification_api_util';
 
 import PlantModalIndexItem from './plant_modal_index_item';
@@ -74,7 +73,6 @@ class AddOwnedPlantModal extends React.Component {
         const plantList = this.props.plants.map(plant => {
             selected = (plant._id === this.props.selectedPlantId);
             return (
-                <div className='plant-modal-index-item'>
                     <PlantModalIndexItem
                         key={plant._id}
                         plant={plant}
@@ -83,7 +81,7 @@ class AddOwnedPlantModal extends React.Component {
                         deselectPlant={this.deselectPlant}
                         selected={selected}
                     />
-                </div>
+
             )
         });
 
@@ -97,7 +95,7 @@ class AddOwnedPlantModal extends React.Component {
                         </div>
                         <div className='plant-modal-name-and-button'>
                             <label className="nickname-label">Nickname:</label>
-                            <input className="nickname-input" type="text" placeholder="e.g. 'Lucy', 'Kitchen Snake Plant" onChange={this.setNickname} value={this.state.nickname}/>
+                            <input className="nickname-input" type="text" placeholder="e.g. 'Lucy', 'Kitchen Plant" onChange={this.setNickname} value={this.state.nickname}/>
                             <div className="add-plant-btn" onClick={this.addOwnedPlant}>Add to garden</div>
                         </div>
                     </div>
