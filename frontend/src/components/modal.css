@@ -133,16 +133,19 @@
 }
 
 .add-plant-btn {
+
+    background-color: rgb(94, 156, 94);
+    color: #1f331a;
+
     margin-top: 15px;
-    color: #2b4624;
+
+
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    background-color: transparent;
     border: 1px solid  #2b4624;
     border-radius: 4px;
     display: inline-block;
@@ -181,17 +184,51 @@
     cursor: pointer;
 }
 
-.x {
-  position: absolute;
+.modal-show .x {
   font-size: 40px;
   transform: rotate(45deg);
+  position: absolute;
+  left: 465px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-add-items .x {
+  font-size: 40px;
+  transform: rotate(45deg);
+  position: absolute;
   left: 1160px;
   top: 0px;
 }
 
-.x:hover {
+.modal-add-items .x:hover, .modal-show .x:hover {
   color: rgb(204, 204, 204);
   cursor: pointer;
+}
+
+.cancel-button button {
+    margin-top: 5px;
+    background-color: rgb(94, 156, 94);
+    color: #21361b;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 1px solid  #2b462479;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.cancel-button button:hover {
+    border-color: rgb(13, 36, 8);
+    color: rgb(13, 36, 8);
+    background-color: rgb(76, 136, 76);
+    cursor: pointer;
 }
 
 .plant-item-hover-selected {
@@ -234,8 +271,18 @@
   font-size: 14px;
 }
 
-.nickname, .frequency, .individual-nickname-input {
-  color: black;
+.show-modal-child .nickname, .show-modal-child .frequency {
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+}
+
+.show-modal-child .plant-modal-thumb {
+  margin-top: 20px;
+  height: 200px;
 }
 
 .show-modal-info {
