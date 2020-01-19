@@ -1,6 +1,6 @@
 import React from 'react';
 import '../modal.css';
-import PlantIndexItem from '../plants/plant_index_item';
+import PlantModalIndexItem from '../modals/plant_modal_index_item';
 import * as NotificationApiUtils from '../../util/notification_api_util';
 
 class ShowOwnedPlantModal extends React.Component {
@@ -23,14 +23,15 @@ class ShowOwnedPlantModal extends React.Component {
                     <div className="modal-show-wrapper">
                         <div className="modal-show">
                             <p className="x" onClick={this.props.ownProps.closeModal}>+</p>
-                            <PlantIndexItem
+                            <PlantModalIndexItem
                                 key={plant._id}
                                 plant={plant}
                                 modalType={this.props.modalType}
+                                closeModal={this.props.closeModal}
                             />
                             <div className="show-modal-info">
-                                <p className="nickname">{ownedPlant.nickname}</p>
-                                <p className="frequency">Watering frequency: ~{plant.frequency} days</p>
+                                <p className="nickname">"{ownedPlant.nickname}"</p>
+                                <p className="frequency">Water every ~{plant.frequency} days</p>
                             </div>
                             <div className="cancel-button">
                                 <button onClick={() => this.cancelAlert(ownedPlant.plantId)}>Cancel notifications</button>
