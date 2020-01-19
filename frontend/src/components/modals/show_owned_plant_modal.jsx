@@ -17,6 +17,8 @@ class ShowOwnedPlantModal extends React.Component {
 
     render() {
         const {ownedPlant, plant} = this.props;
+        let name = `${ownedPlant.userId} ${ownedPlant.nickname.trim()} ${plant.name}`;
+        
         return (
             <div className="modal-background" onClick={this.props.ownProps.closeModal}>
                 <div className="show-modal-child" onClick={e => e.stopPropagation()}>
@@ -34,7 +36,7 @@ class ShowOwnedPlantModal extends React.Component {
                                 <p className="frequency">Water every ~{plant.frequency} days</p>
                             </div>
                             <div className="cancel-button">
-                                <button onClick={() => this.cancelAlert(ownedPlant.plantId)}>Cancel notifications</button>
+                                <button onClick={() => this.cancelAlert(name)}>Cancel notifications</button>
                             </div>
                         </div>
                     </div>

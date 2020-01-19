@@ -30,29 +30,30 @@ router.post("/", (req, res) => {
     
       const initMail = new helper.Mail(from_email, initSubject, to_email, initContent);
     
-      let request = sg.emptyRequest({
-        method: 'POST',
-        path: '/v3/mail/send',
-        body: initMail.toJSON(),
-      });
+      // let request = sg.emptyRequest({
+      //   method: 'POST',
+      //   path: '/v3/mail/send',
+      //   body: initMail.toJSON(),
+      // });
     
-      sg.API(request, function (error, response) {
-        console.log(response.statusCode);
-        console.log(response.body);
-        console.log(response.headers);
-      });
+      // sg.API(request, function (error, response) {
+      //   console.log(response.statusCode);
+      //   console.log(response.body);
+      //   console.log(response.headers);
+      // });
     
       let firstDate = new Date(Date.now() + (req.body.frequency * 24 * 60 * 60 * 1000));
       firstDate = firstDate.getDate();
 
-      let rule = `* 7 ${firstDate} * *`;
+      // let rule = `* 7 ${firstDate} * *`;
+      let rule = `${firstDate} * * * * *`;
     
       let job = schedule.scheduleJob(req.body.name, rule, function () {
-        // console.log(req.body);
+        console.log(req.body);
 
-        // console.log(schedule.scheduledJobs);
+        console.log(schedule.scheduledJobs);
         // schedule.scheduledJobs[req.body.name].reschedule('1 * * * * *');
-        // console.log(schedule.scheduledJobs[req.body.name].nextInvocation());
+        console.log(schedule.scheduledJobs[req.body.name].nextInvocation());
 
         let nextDate = new Date(Date.now() + (req.body.frequency * 24 * 60 * 60 * 1000));
         nextDate = nextDate.getDate();
@@ -68,17 +69,17 @@ router.post("/", (req, res) => {
     
         // BELOW THIS THE EMAIL IS DISPATCHED
     
-        request = sg.emptyRequest({
-          method: 'POST',
-          path: '/v3/mail/send',
-          body: alertMail.toJSON(),
-        });
+        // request = sg.emptyRequest({
+        //   method: 'POST',
+        //   path: '/v3/mail/send',
+        //   body: alertMail.toJSON(),
+        // });
     
-        sg.API(request, function (error, response) {
-          console.log(response.statusCode);
-          console.log(response.body);
-          console.log(response.headers);
-        });
+        // sg.API(request, function (error, response) {
+        //   console.log(response.statusCode);
+        //   console.log(response.body);
+        //   console.log(response.headers);
+        // });
       });
     })
 
