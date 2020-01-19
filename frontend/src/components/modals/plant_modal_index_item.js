@@ -19,8 +19,9 @@ class PlantModalIndexItem extends React.Component {
     if (this.props.modalType === "add owned plant") {
       this.props.selectPlant(this.props.plant);
       this.setState({selected: true});
-    } else {
+    } else if (this.props.modalType === "show owned plant") {
       const plantId = this.props.plant._id;
+      this.props.closeModal();
       this.props.history.push(`/plants/${plantId}`);
     }
   }

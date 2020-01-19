@@ -4,14 +4,8 @@ import { withRouter } from 'react-router-dom';
 class PlantIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selected: props.selected
-    }
 
     this.handleClick = this.handleClick.bind(this);
-    // this.handleBlur = this.handleBlur.bind(this);
-    // this.itemParent = React.createRef();
-    // this.handleChildEvent = this.handleChildEvent.bind(this);
   }
 
   handleClick() {
@@ -23,7 +17,7 @@ class PlantIndexItem extends React.Component {
   render() {
     const { plant } = this.props;
     return (
-      <article className='plant-item-hover' onClick={this.handleClick} tabIndex='0'>
+      <article className='plant-item-hover' onClick={this.handleClick}>
         <div className='plant-index-item-contents' >
             <div className='img-wrapper'>
               <img alt="plant thumbnail" className='plant-thumb' src={plant.imgUrl} height="200" />
