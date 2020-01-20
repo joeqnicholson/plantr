@@ -51,9 +51,9 @@ router.post("/", (req, res) => {
       let job = schedule.scheduleJob(req.body.name, rule, function () {
         // console.log(req.body);
 
-        // console.log(schedule.scheduledJobs);
+        console.log(schedule.scheduledJobs);
         // schedule.scheduledJobs[req.body.name].reschedule('1 * * * * *');
-        // console.log(schedule.scheduledJobs[req.body.name].nextInvocation());
+        console.log(schedule.scheduledJobs[req.body.name].nextInvocation());
 
         let nextDate = new Date(Date.now() + (req.body.frequency * 24 * 60 * 60 * 1000));
         nextDate = nextDate.getDate();

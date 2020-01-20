@@ -28,7 +28,6 @@ class PlantModalIndexItem extends React.Component {
 
   handleBlur() {
     if (this.props.modalType === "add owned plant") {
-      debugger
       this.props.deselectPlant();
       this.setState({ selected: false });
     }
