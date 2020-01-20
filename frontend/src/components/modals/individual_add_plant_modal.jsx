@@ -2,6 +2,7 @@ import React from 'react';
 import '../modal.css';
 import PlantIndexItem from '../plants/plant_index_item';
 import {withRouter} from 'react-router-dom';
+import * as NotificationApiUtils from '../../util/notification_api_util';
 
 class IndividualAddPlantModal extends React.Component {
     constructor(props) {
@@ -12,16 +13,37 @@ class IndividualAddPlantModal extends React.Component {
 
         this.addOwnedPlant = this.addOwnedPlant.bind(this);
         this.setNickname = this.setNickname.bind(this);
+        this.setAlert = this.setAlert.bind(this);
+        // this.cancelAlert = this.cancelAlert.bind(this);
     }
+
+    setAlert(ownedPlantToAdd) {
+        const plant = ownedPlantToAdd;
+        const frequency = plant.frequency;
+        const plantName = plant.plantName;
+        const water = plant.water;
+        const username = this.props.username;
+        const nickname = this.state.nickname;
+        const userId = plant.userId;
+        const name = `${userId} ${nickname.trim()} ${plantName}`;
+        NotificationApiUtils.createNotification({ name, frequency, plantName, nickname, username, userId, water });
+    }
+
+    // cancelAlert(name) {
+    //     NotificationApiUtils.cancelNotification({ name });
+    // }
 
     addOwnedPlant() {
         let ownedPlantToAdd = {
             nickname: this.state.nickname,
             userId: this.props.userId,
-            plantId: this.props.plant._id
+            plantId: this.props.plant._id,
+            frequency: this.props.plant.frequency,
+            plantName: this.props.plant.name,
+            water: this.props.plant.water
         }
         this.props.addOwnedPlant(ownedPlantToAdd);
-
+        this.setAlert(ownedPlantToAdd);
         //setAlert functionality to be implemented by Kenny :)
         // this.setAlert();
         this.props.ownProps.closeModal();

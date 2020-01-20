@@ -70,21 +70,21 @@ class LoginForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="signup-form">
               <br />
-              <div class='session-title'>Log In</div>
-              <input class='input-session'type="text"
+              <div className='session-title'>Log In</div>
+              <input className='input-session' type="text" autoComplete="username"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
               <br />
-              <input class='input-session'type="password"
+              <input className='input-session' type="password" autoComplete="new-password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
               <br />
-              <input class='input-session-submit'type="submit" value="Log In" />
-              <input onClick={this.demoLogin} class='input-session-submit'type="submit" value="Demo User" />
+              <input className='input-session-submit'type="submit" value="Log In" />
+              <input onClick={this.demoLogin} className='input-session-submit'type="submit" value="Demo User" />
               {this.handleErrors()}
             </div>
           </form>

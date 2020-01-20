@@ -64,14 +64,13 @@ class PlantModalIndexItem extends React.Component {
 
 
   render() {
-    const plantId = this.props.plant._id;
     const { plant } = this.props;
     if(this.state.selected) {
       return (
         <div className='plant-modal-index-item-selected' ref="indexItem" tab-index="0" onBlur={this.handleBlur}>
           <div className='plant-modal-index-item-contents'>
             <div className='modal-img-wrapper'>
-              <img className='plant-modal-thumb' src={plant.imgUrl} height="50" />
+              <img className='plant-modal-thumb' alt="plant-thumb" src={plant.imgUrl} height="50" />
             </div>
             <div className='plant-modal-info'>
               <div className='plant-modal-name'>{plant.name}</div>
@@ -85,7 +84,7 @@ class PlantModalIndexItem extends React.Component {
         <div className='plant-modal-index-item' ref="indexItem" tab-index="0" onClick={this.handleFocus} >
           <div className='plant-modal-index-item-contents' >
               <div className='modal-img-wrapper'>
-                <img className='plant-modal-thumb' src={plant.imgUrl} height="50" />
+                <img className='plant-modal-thumb' alt="plant-thumb" src={plant.imgUrl} height="50" />
               </div>
               <div className='plant-modal-info'>
                 <div className='plant-modal-name'>{plant.name}</div>

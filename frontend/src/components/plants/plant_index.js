@@ -11,38 +11,20 @@ class PlantIndex extends React.Component {
     this.props.fetchAllPlants();
   }
 
-  // setAlert(name) {
-  //   const frequency = 1;
-  //   const plantName = "Snake";
-  //   const username = "Kenny";
-  //   const water = 100;
-  //   NotificationApiUtils.createNotification({ name, frequency, plantName, username, water });
-  // }
-
-  // cancelAlert(name) {
-  //   NotificationApiUtils.cancelNotification({ name });
-  // }
-
   render() {
     let i = 0;
     const plantList = this.props.plants.map( plant => {
       return (
-        
-          <div className='plant-index-item'>
-            <PlantIndexItem key={plant._id} plant={plant} i={i}  />
-          </div>
-
+        <div className='plant-index-item' key={plant._id}>
+            <PlantIndexItem plant={plant} i={i}  />
+        </div>
       )
     });
 
     return (
       <div className='plant-wrapper'>
         <div className='middle-plant-wrapper'>
-        {plantList}
-        {/* <button onClick={() => this.setAlert("A")}>A</button>
-        <button onClick={() => this.setAlert("B")}>B</button>
-        <button onClick={() => this.cancelAlert("A")}>Cancel A</button>
-        <button onClick={() => this.cancelAlert("B")}>Cancel B</button> */}
+          {plantList}
         </div>
       </div>
     )

@@ -21,7 +21,7 @@ const GardenIndexItem = props => {
         <article className='plant-item-hover' onClick={props.openShowModal}>
             <div className='plant-index-item-contents'>
                 <div className='img-wrapper'>
-                <img className='plant-thumb' src={props.ownedPlant.plant.imgUrl} height="200"/>
+                <img className='plant-thumb' alt="plant-thumb" src={props.ownedPlant.plant.imgUrl} height="200"/>
                 </div>
                     <div className='plant-info'>
                     {
