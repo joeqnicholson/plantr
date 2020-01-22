@@ -25,7 +25,7 @@ const GardenIndexItem = props => {
                 </div>
                     <div className='plant-info'>
                       <div className='plant-name'>
-                        {props.ownedPlant.nickname.length > 1 ? (
+                        {props.ownedPlant.nickname !== " " ? (
                           props.ownedPlant.nickname
                         ) : (
                           props.ownedPlant.plant.name
