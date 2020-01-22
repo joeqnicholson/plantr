@@ -110,11 +110,15 @@ textarea{
 }
 
 .session-errors-ul {
-  margin-top: 10px;
+  margin: 0 0 10px 20px;
 }
 
 .session-error-li {
-  margin-bottom: 1px;
   list-style: none;
-  color: rgb(106, 106, 106);
+  color: red;
+  margin-bottom: 5px;
+}
+
+.session-error-li:last-of-type {
+  margin-bottom: 0;
 }
