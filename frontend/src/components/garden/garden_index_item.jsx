@@ -24,10 +24,14 @@ const GardenIndexItem = props => {
                 <img className='plant-thumb' alt="plant-thumb" src={props.ownedPlant.plant.imgUrl} height="200"/>
                 </div>
                     <div className='plant-info'>
-                    {
-                        props.ownedPlant.nickname ? <div className='plant-name'>{props.ownedPlant.nickname}</div> :
-                        <div className='plant-latin-name'>{props.ownedPlant.plant.latinName}</div>
-                    }
+                      <div className='plant-name'>
+                        {props.ownedPlant.nickname.length > 1 ? (
+                          props.ownedPlant.nickname
+                        ) : (
+                          props.ownedPlant.plant.name
+                        )}
+                      </div>
+                      <div className='plant-latin-name'>{props.ownedPlant.plant.latinName}</div>
                     </div>
             </div>
         </article>
