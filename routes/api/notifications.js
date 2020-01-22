@@ -42,11 +42,15 @@ router.post("/", (req, res) => {
         console.log(response.headers);
       });
     
+      // let firstDate = new Date(Date.now() + (req.body.frequency * 60 * 1000));
+      // firstDate = firstDate.getMinutes();
+      // console.log(firstDate)
+
       let firstDate = new Date(Date.now() + (req.body.frequency * 24 * 60 * 60 * 1000));
       firstDate = firstDate.getDate();
 
-      // let rule = `* 7 ${firstDate} * *`;
-      let rule = `${firstDate} * * * *`;
+      // let rule = `${firstDate} * * * *`;
+      let rule = `* 7 ${firstDate} * *`;
     
       let job = schedule.scheduleJob(req.body.name, rule, function () {
         console.log(req.body);
@@ -55,9 +59,13 @@ router.post("/", (req, res) => {
         // schedule.scheduledJobs[req.body.name].reschedule('1 * * * * *');
         console.log(schedule.scheduledJobs[req.body.name].nextInvocation());
 
+        // let nextDate = new Date(Date.now() + (req.body.frequency * 60 * 1000));
+        // nextDate = nextDate.getMinutes();
+
         let nextDate = new Date(Date.now() + (req.body.frequency * 24 * 60 * 60 * 1000));
         nextDate = nextDate.getDate();
 
+        // schedule.scheduledJobs[req.body.name].reschedule(`${nextDate} * * * *`);
         schedule.scheduledJobs[req.body.name].reschedule(`* 7 ${nextDate} * *`);
         console.log(schedule.scheduledJobs[req.body.name].nextInvocation());
       
