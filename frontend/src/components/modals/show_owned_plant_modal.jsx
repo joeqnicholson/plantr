@@ -1,6 +1,6 @@
 import React from 'react';
 import '../modal.css';
-import PlantModalIndexItem from '../modals/plant_modal_index_item';
+import ShowPlantModalIndexItem from '../modals/show_plant_modal_index_item';
 import * as NotificationApiUtils from '../../util/notification_api_util';
 
 class ShowOwnedPlantModal extends React.Component {
@@ -23,20 +23,19 @@ class ShowOwnedPlantModal extends React.Component {
             <div className="modal-background" onClick={this.props.ownProps.closeModal}>
                 <div className="show-modal-child" onClick={e => e.stopPropagation()}>
                     <div className="modal-show-wrapper">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+                    <div className="show-x-wrapper" onClick={this.props.ownProps.closeModal}><div className="show-modal-x"><i class="fa fa-close"></i></div></div>
                         <div className="modal-show">
-                            <p className="x" onClick={this.props.ownProps.closeModal}>+</p>
-                            <PlantModalIndexItem
+                            <ShowPlantModalIndexItem
                                 key={plant._id}
                                 plant={plant}
                                 modalType={this.props.modalType}
                                 closeModal={this.props.closeModal}
+                                ownedPlant={this.props.ownedPlant}
                             />
-                            <div className="show-modal-info">
-                                <p className="nickname">"{ownedPlant.nickname}"</p>
-                                <p className="frequency">Water every ~{plant.frequency} days</p>
-                            </div>
+                            
                             <div className="cancel-button">
-                                <button onClick={() => this.cancelAlert(name)}>Cancel notifications</button>
+                                <button onClick={() => this.cancelAlert(name)}>Remove from garden</button>
                             </div>
                         </div>
                     </div>
