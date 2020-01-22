@@ -90,8 +90,7 @@
 .plant-latin-name{
     text-align: center;
     font-style: italic;
-    color: var(--text-color);
-    opacity: 50%;
+    color: rgb(161, 161, 161);
     text-decoration: none;
 }
 .plant-name:hover, .plant-latin-name:hover{
