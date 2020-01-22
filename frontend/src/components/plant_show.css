@@ -3,27 +3,26 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  background-color: rgba(131, 182, 131, 0.11);
+  background-color: transparent;
 }
 
 .plant-show-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 64px;
   width: 70%;
 }
 
 .plant-show-img-wrapper {
-  margin-top: 32px;
   display: flex;
   justify-content: center;
   width: 40%;
   height: 400px;
   padding: 25px;
-  margin-right: 20px;
-  border: 1px solid rgba(129, 138, 8, 0.336);;
   border-radius: 5px;
-  background-color: rgba(146, 156, 9, 0.11);
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0.3rem 0px;
 }
 
 .plant-show-img {
@@ -66,25 +65,22 @@
 }
 
 .add-owned-plant-button {
-  color: #2b4624;
-  padding: 10px 10px;
-  margin: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  background-color: transparent;
-  border: 1px solid  #2b4624;
-  border-radius: 4px;
-  display: inline-block;
-  background-color: rgba(144, 238, 144, 0.205);
+  width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: rgba(27, 185, 61, 0.692);
+    color: rgb(255, 255, 255);
+    height: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .add-owned-plant-button:hover {
-  border-color: rgb(76, 136, 76);
-  color: rgb(41, 97, 41);
-  background-color: rgba(109, 196, 109, 0.623);
+  cursor: pointer;
+    background: rgba(21, 151, 49, 0.836);
   
 }
