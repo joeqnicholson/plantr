@@ -49,33 +49,25 @@ class Garden extends React.Component {
                     modal = null;
                     break;
             }
-            if(this.props.ownedPlants.length === 0){
-                return(
-                    <div className='plant-wrapper' >
+
+            if (this.props.plants.length) {
+                return (
+                    <div className="plant-wrapper">
                         {modal}
-                        <div className='middle-plant-wrapper'>
-                            <div className="plus-index-item" onClick={this.props.openAddModal}>
-                                    <div className='plant-index-item-plus'>+</div>
-                            </div>
+                        <div className="middle-plant-wrapper">
+                                <div className="plus-index-item" onClick={this.props.openAddModal}>
+                                    <div className='plant-index-item-plus'>
+                                        +
+                                    </div>
+                                </div>
+    
+                                {this.props.ownedPlants.length ? gardenIndexItems : null}
                         </div>
                     </div>
-                    )
+                );
+            } else {
+                return null;
             }
-            
-            return (
-                <div className="plant-wrapper">
-                    {modal}
-                    {/* <h1 className="garden-title">My Garden</h1> */}
-                    <div className="middle-plant-wrapper">
-                            <div className="plus-index-item" onClick={this.props.openAddModal}>
-                                <div className='plant-index-item-plus'>
-                                    +
-                                </div>
-                            </div>
-                            {gardenIndexItems}
-                    </div>
-                </div>
-            );
         }
     }
 
