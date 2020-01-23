@@ -1,9 +1,9 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import '../modal.css';
 import * as NotificationApiUtils from '../../util/notification_api_util';
-
 import PlantModalIndexItem from './plant_modal_index_item';
-import {withRouter} from 'react-router-dom';
+import { fetchAllPlants } from '../../util/plant_api_util';
 
 class AddOwnedPlantModal extends React.Component {
     constructor(props) {
@@ -11,14 +11,11 @@ class AddOwnedPlantModal extends React.Component {
         this.state = {
             ownedPlantToAdd: null,
             nickname: "",
+            selectedPlantId: null
         }
         this.addOwnedPlant = this.addOwnedPlant.bind(this);
         this.setNickname = this.setNickname.bind(this);
-        this.selectPlant = this.selectPlant.bind(this);
-
         this.setAlert = this.setAlert.bind(this);
-        // this.cancelAlert = this.cancelAlert.bind(this);
-        this.deselectPlant = this.deselectPlant.bind(this);
     }
 
     setAlert() {
@@ -31,24 +28,6 @@ class AddOwnedPlantModal extends React.Component {
         const userId = plant.userId;
         const name = `${userId} ${nickname.trim()} ${plantName}`;
         NotificationApiUtils.createNotification({ name, frequency, plantName, nickname, username, userId, water });
-    }
-
-    // cancelAlert(name) {
-    //     NotificationApiUtils.cancelNotification({ name });
-    // }
-
-    selectPlant(plant) {
-        let ownedPlantToAdd = {};
-        ownedPlantToAdd.userId = this.props.userId;
-        ownedPlantToAdd.plantId = plant._id;
-        ownedPlantToAdd.frequency = plant.frequency;
-        ownedPlantToAdd.water = plant.water;
-        ownedPlantToAdd.plantName = plant.name;
-        this.setState({ ownedPlantToAdd: ownedPlantToAdd });
-    }
-
-    deselectPlant() {
-        this.setState({ ownedPlantToAdd: null });
     }
 
     addOwnedPlant() {
@@ -69,20 +48,29 @@ class AddOwnedPlantModal extends React.Component {
     }
 
     render() {
-        let selected;
         const plantList = this.props.plants.map(plant => {
-            selected = (plant._id === this.props.selectedPlantId);
-            return (
+            if(plant._id === this.state.selectedPlantId) {
+                return (
                     <PlantModalIndexItem
+                        selected={true}
                         key={plant._id}
                         plant={plant}
                         modalType={this.props.modalType}
-                        selectPlant={this.selectPlant}
-                        deselectPlant={this.deselectPlant}
-                        selected={selected}
                     />
-
-            )
+                )
+            } else {
+                return (
+                    <div onClick={() => this.setState({ selectedPlantId: plant._id })}>
+                        <PlantModalIndexItem
+                            selected={false}
+                            key={plant._id}
+                            plant={plant}
+                            modalType={this.props.modalType}
+                        />
+                    </div>
+                )
+            }
+           
         });
 
         return (

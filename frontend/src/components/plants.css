@@ -4,11 +4,12 @@
     display: flex;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.11);
+    margin-left: 55 px;
 }
 
 .middle-plant-wrapper{
     margin-top: 80px;
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
