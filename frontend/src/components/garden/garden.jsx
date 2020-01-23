@@ -18,11 +18,6 @@ class Garden extends React.Component {
         this.props.fetchOwnedPlants(this.props.match.params.userId);
     }
 
-    // componentWillUnmount() {
-    //     this.props.fetchAllPlants();
-    //     this.props.fetchOwnedPlants(this.props.match.params.userId);
-    // }
-
     selectOwnedPlant(ownedPlant) {
         this.setState({selectedOwnedPlant: ownedPlant})
     }
