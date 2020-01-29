@@ -60,34 +60,48 @@ class SignupForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="signup-form">
               <br />
-              <div className='session-title'>Sign Up</div>
-              <input className='input-session'type="text"
+              <div className="session-title">Sign Up</div>
+              <input
+                className="input-session"
+                type="text"
                 value={this.state.email}
-                onChange={this.update('email')}
+                onChange={this.update("email")}
                 placeholder="Email"
               />
               <br />
-              <input className='input-session' type="text" autoComplete="username"
+              <input
+                className="input-session"
+                type="text"
+                autoComplete="username"
                 value={this.state.username}
-                onChange={this.update('username')}
+                onChange={this.update("username")}
                 placeholder="Username"
               />
               <br />
-              <input className='input-session' type="password" autoComplete="new-password"
+              <input
+                className="input-session"
+                type="password"
+                autoComplete="new-password"
                 value={this.state.password}
-                onChange={this.update('password')}
+                onChange={this.update("password")}
                 placeholder="Password"
               />
               <br />
-              <input className='input-session' type="password" autoComplete="new-password"
+              <input
+                className="input-session"
+                type="password"
+                autoComplete="new-password"
                 value={this.state.password2}
-                onChange={this.update('password2')}
+                onChange={this.update("password2")}
                 placeholder="Confirm Password"
               />
               <br />
-              {this.handleErrors()}
-              <input className='input-session-submit'type="submit" value="Join" />
-
+              <div className="session-errors">{this.handleErrors()}</div>
+              <input
+                className="input-session-submit"
+                type="submit"
+                value="Join"
+              />
             </div>
           </form>
         </div>

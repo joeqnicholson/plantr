@@ -122,3 +122,37 @@ textarea{
 .session-error-li:last-of-type {
   margin-bottom: 0;
 }
+
+div.session-errors {
+  transform: scaleY(1);
+  animation-name: scaleErrors;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: .5s;
+}
+
+@keyframes scaleErrors {
+	0% {
+    transform: scaleY(0);
+  }
+	100% {
+    transform: scaleY(1);
+	}
+}
+
+li[class*="error"] {
+  opacity: 1;
+  animation-name: fadeErrors;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: .5s;
+}
+
+@keyframes fadeErrors {
+	0% {
+    opacity: 0;
+  }
+	100% {
+    opacity: 1;
+	}
+}

@@ -66,26 +66,44 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
-        <div className='image-background'>
+        <div className="image-background">
           <form onSubmit={this.handleSubmit}>
             <div className="signup-form">
               <br />
-              <div className='session-title'>Log In</div>
-              <input className='input-session' type="text" autoComplete="username"
+              <div className="session-title">Log In</div>
+              <input
+                className="input-session"
+                type="text"
+                autoComplete="username"
                 value={this.state.email}
-                onChange={this.update('email')}
+                onChange={this.update("email")}
                 placeholder="Email"
               />
               <br />
-              <input className='input-session' type="password" autoComplete="new-password"
+              <input
+                className="input-session"
+                type="password"
+                autoComplete="new-password"
                 value={this.state.password}
-                onChange={this.update('password')}
+                onChange={this.update("password")}
                 placeholder="Password"
               />
               <br />
-              {this.handleErrors()}
-              <input className='input-session-submit'type="submit" value="Log In" />
-              <input onClick={this.demoLogin} className='input-session-submit'type="submit" value="Demo User" />
+              {!!this.state.errors ? (
+                <div className="session-errors">{this.handleErrors()}</div>
+              ) : (null)
+              }
+              <input
+                className="input-session-submit"
+                type="submit"
+                value="Log In"
+              />
+              <input
+                onClick={this.demoLogin}
+                className="input-session-submit"
+                type="submit"
+                value="Demo User"
+              />
             </div>
           </form>
         </div>
