@@ -1,8 +1,10 @@
-# plantr
-
+# README
 ![Logo](https://raw.githubusercontent.com/joeqnicholson/plantr/master/frontend/src/components/plant.png)
 
-Collect houseplants you care for in your 'garden'. Each plant has helpful tips and care instructions.
+[plantr Live Site](https://plantr-app.herokuapp.com)
+plantr is a MERN-stack single-page app which assists users with taking care of their houseplants. plantr supports a large variety of plants, providing users with helpful care information while also allowing watering notifications to be emailed to the user on the morning that each plant may require watering.
+
+
 
 ![Screenshot](https://raw.githubusercontent.com/joeqnicholson/plantr/master/frontend/public/planter_screenshot.png)
 
