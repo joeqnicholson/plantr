@@ -49,7 +49,9 @@ plantr is a MERN-stack single-page app which assists users with taking care of t
   * Future notifications are emailed at a regular, plant-specific schedule until canceled by the user
 
 * Scheduling Functionality
-  * 
+  * Basic cron-like job scheduling capability is provided by node-schedule package
+  * Due to the limitations of cron-style scheduling, further logic was implemented to generate future events
+    * Each time a scheduled job is initiated, all future scheduled occurrences are canceled and re-generated on-the-fly to maintain schedule accuracy
 
 # Future Features
 * Users 'review' plants and post tips/questions. They will create a _growing_ library of information
