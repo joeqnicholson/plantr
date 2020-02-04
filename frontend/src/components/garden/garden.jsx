@@ -31,7 +31,7 @@ class Garden extends React.Component {
                         </div>
                     </div>
                 );
-            });
+            }).reverse();
             let modal;
             switch(this.props.modal) {
                 case 'add owned plant':
