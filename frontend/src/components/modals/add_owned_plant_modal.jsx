@@ -31,10 +31,19 @@ class AddOwnedPlantModal extends React.Component {
     }
 
     addOwnedPlant() {
-        let ownedPlantToAdd = this.state.ownedPlantToAdd;
+        let selectedPlant = this.props.plants.filter((plant) => {
+            return plant._id === this.state.selectedPlantId;
+        })[0];
+        this.setState({ownedPlantToAdd: selectedPlant}, () => {
+            this.setAlert();
+        });
+
+        let ownedPlantToAdd = {};
         ownedPlantToAdd.nickname = this.state.nickname;
+        ownedPlantToAdd.plantId = selectedPlant._id;
+        ownedPlantToAdd.userId = this.props.userId;
         this.props.addOwnedPlant(ownedPlantToAdd);
-        this.setAlert();
+
         this.props.ownProps.closeModal();
         this.props.history.push(`/garden/${this.props.userId}`);
     }
