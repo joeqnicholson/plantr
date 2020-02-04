@@ -117,13 +117,9 @@
 }
 
 .add-plant-btn {
-
     background-color: rgb(94, 156, 94);
     color: #1f331a;
-
     margin-top: 15px;
-
-
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
@@ -156,9 +152,9 @@
     background-color: transparent;
     border-radius: 4px;
     display: inline-block;
-    position: absolute;
-    top: 350px;
-    left: 190px;
+    width: 150px;
+    margin-left: 80px;
+    margin-top: 10px;
 }
 
 .individual-add-plant-btn:hover {
@@ -258,6 +254,21 @@
   color: #2e2e2e;
   float: right;
 }
+
+.modal-show .x {
+  color: #000000;
+  font-weight: 600;
+  font-size: 36px;
+  transform: rotate(45deg);
+  margin-left: 600px;
+  margin-top: 3px;
+}
+
+.modal-show .x:hover {
+  cursor: pointer;
+  color: #2e2e2e;
+}
+
 
 .modal-add-items .x {
   font-size: 40px;
