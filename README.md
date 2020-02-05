@@ -1,4 +1,4 @@
-# README
+# plantr
 ![Logo](https://raw.githubusercontent.com/joeqnicholson/plantr/master/frontend/src/components/plant.png)
 
 ### [plantr Live Site](https://plantr-app.herokuapp.com)
