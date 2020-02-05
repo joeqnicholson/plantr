@@ -10,20 +10,17 @@ class LoginForm extends React.Component {
       password: '',
       errors: {}
     };
-
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the Plants page
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-      this.props.history.push('/plants');
-    }
-
+  componentDidUpdate(nextProps) {
     // Set or clear errors
-    this.setState({ errors: nextProps.errors })
+    if (this.state.errors !== nextProps.errors) {
+      this.setState({ errors: nextProps.errors })
+    }
   }
 
   update(field) {
@@ -64,10 +61,12 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    let errorsKlass = Object.keys(this.state.errors).length ? " expand" : null;
+
     return (
       <div className="signup-form-container">
         <div className="image-background">
-          <form onSubmit={this.handleSubmit}>
+          <form className="session-form" onSubmit={this.handleSubmit}>
             <div className="signup-form">
               <br />
               <div className="session-title">Log In</div>
@@ -76,7 +75,7 @@ class LoginForm extends React.Component {
                 type="text"
                 autoComplete="username"
                 value={this.state.email}
-                onChange={this.update("email")}
+                onChange={() => this.update("email")}
                 placeholder="Email"
               />
               <br />
@@ -85,14 +84,11 @@ class LoginForm extends React.Component {
                 type="password"
                 autoComplete="new-password"
                 value={this.state.password}
-                onChange={this.update("password")}
+                onChange={() => this.update("password")}
                 placeholder="Password"
               />
               <br />
-              {!!this.state.errors ? (
-                <div className="session-errors">{this.handleErrors()}</div>
-              ) : (null)
-              }
+              <div className={`session-errors${errorsKlass}`}>{this.handleErrors()}</div>
               <input
                 className="input-session-submit"
                 type="submit"

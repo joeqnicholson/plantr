@@ -2,12 +2,18 @@
     display: flex;
     height: 100%;
 }
+
+.session-form{
+  height: fit-content;
+}
+
 .signup-form{
     margin-top: 65px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 300px;
+    height: fit-content;
     border: 1px solid rgb(217, 230, 218);
     border-radius: 5px;
     padding: 20px 30px;
@@ -123,8 +129,13 @@ textarea{
   margin-bottom: 0;
 }
 
-div.session-errors {
-  transform: scaleY(1);
+.session-errors {
+  height: 0;
+}
+
+div.session-errors.expand, div.signup-form {
+  height: fit-content;
+  transform: scale(1);
   animation-name: scaleErrors;
   animation-iteration-count: 1;
   animation-timing-function: ease;
@@ -133,14 +144,15 @@ div.session-errors {
 
 @keyframes scaleErrors {
 	0% {
-    transform: scaleY(0);
+    transform: scale(0);
   }
 	100% {
-    transform: scaleY(1);
+    transform: scale(1);
 	}
 }
 
-li[class*="error"] {
+[class*="error"] {
+  height: fit-content;
   opacity: 1;
   animation-name: fadeErrors;
   animation-iteration-count: 1;
