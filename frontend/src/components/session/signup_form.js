@@ -6,10 +6,10 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      username: '',
-      password: '',
-      password2: '',
+      email: "",
+      username: "",
+      password: "",
+      password2: "",
       errors: {}
     };
 
@@ -17,16 +17,15 @@ class SignupForm extends React.Component {
     this.handleErrors = this.handleErrors.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+  componentDidUpdate(nextProps) {
+    // Set or clear errors
+    if (this.state.errors !== nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
     }
-
-    this.setState({ errors: nextProps.errors })
   }
 
   update(field) {
-    return event => this.setState({[field]: event.currentTarget.value});
+    return event => this.setState({ [field]: event.currentTarget.value });
   }
 
   handleSubmit(event) {
@@ -37,7 +36,7 @@ class SignupForm extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
-    
+
     this.props.signup(user);
   }
 
@@ -57,7 +56,7 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container">
         <div className="image-background">
-          <form onSubmit={this.handleSubmit}>
+          <form className="session-form" onSubmit={this.handleSubmit}>
             <div className="signup-form">
               <br />
               <div className="session-title">Sign Up</div>
