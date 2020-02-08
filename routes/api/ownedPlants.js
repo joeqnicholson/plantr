@@ -19,7 +19,7 @@ router.get("/:userId", passport.authenticate('jwt', { session: false }),
       .catch(err => {
         res
           .status(404)
-          .json({ errMsg: "There was an issue retreiving your plants" })
+          .json({ errMsg: "There was an issue retrieving your plants" })
       });
   }
 )
