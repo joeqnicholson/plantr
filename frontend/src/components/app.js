@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import SplashPage from './splash/splash_page';
 import NavBarContainer from './nav/navbar_container';
@@ -14,7 +14,7 @@ const App = () => (
   <div className='plantr'>
     <NavBarContainer />
     <Switch>
-      <AuthRoute exact path="/" component={SplashPage} />
+      <Route exact path="/" component={SplashPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/plants" component={PlantIndexContainer} />

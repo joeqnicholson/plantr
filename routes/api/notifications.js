@@ -36,47 +36,45 @@ router.post("/", (req, res) => {
         body: initMail.toJSON(),
       });
     
+      // Dispatch the initial email using SendGrid API
       sg.API(request, function (error, response) {
         console.log(response.statusCode);
         console.log(response.body);
         console.log(response.headers);
       });
-    
-      // let firstDate = new Date(Date.now() + (req.body.frequency * 60 * 1000));
-      // firstDate = firstDate.getMinutes();
-      // console.log(firstDate)
 
+      // Convert watering frequency to milliseconds, create future date object, and extract day of month
       let firstDate = new Date(Date.now() + (req.body.frequency * 24 * 60 * 60 * 1000));
       firstDate = firstDate.getDate();
 
-      // let rule = `${firstDate} * * * *`;
+      // Reference for cron-style rules: '(minute) (hour) (day) (month) (day of week)'
+      // It is important to note that cron-style scheduling using recurrence rules does NOT use a relative offset.
+      // For example, '* * 5 * *' will create a recurrence only on the 5th of each month (Jan 5th, Feb 5th, etc)
+      // as opposed to every 5 days. Even using the inherent recurrence functionality, such as '* * /5 * *', will
+      // result in incorrectly scheduled jobs (Jan 5th, Jan 10th, Jan 15th)
+
+      // Create first cron-style recurrence rule for 7:00 am on the calculated day of the month
       let rule = `* 7 ${firstDate} * *`;
     
+      // Schedule first job using Node Schedule
       let job = schedule.scheduleJob(req.body.name, rule, function () {
-        console.log(req.body);
+        // All code inside this function is executed at the first scheduled notification date
 
-        console.log(schedule.scheduledJobs);
-        // schedule.scheduledJobs[req.body.name].reschedule('1 * * * * *');
-        console.log(schedule.scheduledJobs[req.body.name].nextInvocation());
-
-        // let nextDate = new Date(Date.now() + (req.body.frequency * 60 * 1000));
-        // nextDate = nextDate.getMinutes();
-
+        // To ensure proper notification frequency, a new future date is immediately calculated, as above
         let nextDate = new Date(Date.now() + (req.body.frequency * 24 * 60 * 60 * 1000));
         nextDate = nextDate.getDate();
 
-        // schedule.scheduledJobs[req.body.name].reschedule(`${nextDate} * * * *`);
+        // The next recurrence of this rule is rescheduled using the calculated nextDate
         schedule.scheduledJobs[req.body.name].reschedule(`* 7 ${nextDate} * *`);
-        console.log(schedule.scheduledJobs[req.body.name].nextInvocation());
       
+        // Generate the content of the notification email
         const alertSubject = `Time to water your ${fullPlantName}!`;
         const alertContent = new helper.Content('text/html',
           `Howdy ${req.body.username}, it\'s time water your ${fullPlantName}! Remember to give it ${req.body.waterAmount} liters of water today. It will thank you!`
         );
         const alertMail = new helper.Mail(from_email, alertSubject, to_email, alertContent);
     
-        // BELOW THIS THE EMAIL IS DISPATCHED
-    
+        // Create a request and dispatch the scheduled notification email using SendGrid API
         request = sg.emptyRequest({
           method: 'POST',
           path: '/v3/mail/send',
@@ -95,8 +93,6 @@ router.post("/", (req, res) => {
 })
 
 router.post("/cancel", (req, res) => {
-  console.log(schedule.scheduledJobs);
-  console.log(req.body.name);
   let job = schedule.scheduledJobs[req.body.name];
   let canceled = false;
 
@@ -105,7 +101,7 @@ router.post("/cancel", (req, res) => {
   if (canceled) {
     res.json({ msg: "Notifications canceled" });
   } else {
-    res.status(422).json({ msg: "There was a problem" });
+    res.status(422).json({ msg: "Scheduled notifications not found" });
   };
 })
 
