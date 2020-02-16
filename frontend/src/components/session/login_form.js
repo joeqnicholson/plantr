@@ -75,7 +75,7 @@ class LoginForm extends React.Component {
                 type="text"
                 autoComplete="username"
                 value={this.state.email}
-                onChange={() => this.update("email")}
+                onChange={this.update("email")}
                 placeholder="Email"
               />
               <br />
@@ -84,7 +84,7 @@ class LoginForm extends React.Component {
                 type="password"
                 autoComplete="new-password"
                 value={this.state.password}
-                onChange={() => this.update("password")}
+                onChange={this.update("password")}
                 placeholder="Password"
               />
               <br />
