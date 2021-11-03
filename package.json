@@ -35,7 +35,7 @@
     "passport-jwt": "^4.0.0",
     "react-select": "^3.0.8",
     "sendgrid": "^5.2.3",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
